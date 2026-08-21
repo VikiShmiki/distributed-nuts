@@ -1,0 +1,37 @@
+{
+  "benchmark": "hierarchical_logistic",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "c34a3655a6949ace3e05e4a77ada0a869e83b7b440107a88be27d324752051c0",
+  "config_path": "configs/hierarchical_logistic.yaml",
+  "config_sha256": "3640b27a07c3b00f92231d13ffca114fc97bd404172362a447ecdb4513574aa5",
+  "created_at_utc": "2026-08-09T15:19:38.426142+00:00",
+  "model_metadata": {
+    "data_seed": 17,
+    "description": "Synthetic hierarchical logistic regression with non-centered group effects and deterministic generated binary observations.",
+    "dimension": 8,
+    "event_shape": [
+      8
+    ],
+    "model_family": "hierarchical_logistic",
+    "name": "hierarchical_logistic",
+    "num_features": 2,
+    "num_groups": 4,
+    "num_observations": 12,
+    "observations_per_group": 3,
+    "parameterization": "noncentered_group_effects"
+  },
+  "output_dir": "results/raw/broad_sweep_standard_nuts/hierarchical_logistic",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "scheduling",
+  "profiler_markers_enabled": false,
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 5,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": true,
+  "warm_repeats": 3,
+  "warm_timing_summary": "min of warm_repeats blocked repeats"
+}

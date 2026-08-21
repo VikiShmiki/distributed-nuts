@@ -1,0 +1,35 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Local agent/editor state
+.claude/
+.vscode/
+.idea/
+*.swp
+*~
+
+# HPC container images are multi-GB build products
+images/*.sif
+!images/.gitkeep
+
+# Local LaTeX build products (canonical artifacts are .tex)
+paper.aux
+paper.log
+paper.out
+paper.pdf
+paper.synctex.gz
+
+# OS noise
+.DS_Store
+Thumbs.db

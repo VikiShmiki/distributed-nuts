@@ -1,0 +1,41 @@
+benchmark: long_trace
+model: funnel
+backend: cpu
+dtype: float32
+step_size: 0.03
+max_tree_depth: 2
+predictor: history
+predictor_beta: 0.9
+bucket_size: 2
+model_config: {}
+
+profiles:
+  tiny:
+    seed: 0
+    num_chains: 4
+    dimension: 4
+    num_steps: 12
+
+  medium:
+    seed: 0
+    num_chains: 4
+    dimension: 8
+    num_steps: 256
+    max_tree_depth: 3
+    bucket_size: 4
+
+  paper:
+    seed: 0
+    num_chains: 4
+    dimension: 16
+    num_steps: 1000
+    max_tree_depth: 4
+    bucket_size: 4
+
+  full:
+    seed: 0
+    num_chains: 4
+    dimension: 16
+    num_steps: 1000
+    max_tree_depth: 4
+    bucket_size: 4

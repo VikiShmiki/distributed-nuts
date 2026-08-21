@@ -1,0 +1,43 @@
+{
+  "discrete_metrics_exact": true,
+  "equivalence_passed": true,
+  "final_rng_keys_equal": true,
+  "float_atol": 1e-05,
+  "float_metrics_within_tolerance": true,
+  "float_rtol": 1e-05,
+  "max_position_delta": 0.0,
+  "metric_max_abs_delta": {
+    "acceptance_statistic": 0.0,
+    "energy_error": 0.0,
+    "gradient_norm": 0.0
+  },
+  "metric_mismatch_count": {
+    "acceptance_statistic": 0,
+    "divergence_flag": 0,
+    "energy_error": 0,
+    "gradient_norm": 0,
+    "leapfrog_count": 0,
+    "max_tree_depth_hit": 0,
+    "realized_tree_depth": 0
+  },
+  "metrics_allclose": {
+    "acceptance_statistic": true,
+    "divergence_flag": true,
+    "energy_error": true,
+    "gradient_norm": true,
+    "leapfrog_count": true,
+    "max_tree_depth_hit": true,
+    "realized_tree_depth": true
+  },
+  "metrics_equal": {
+    "acceptance_statistic": true,
+    "divergence_flag": true,
+    "energy_error": true,
+    "gradient_norm": true,
+    "leapfrog_count": true,
+    "max_tree_depth_hit": true,
+    "realized_tree_depth": true
+  },
+  "positions_allclose": true,
+  "positions_equal": true
+}

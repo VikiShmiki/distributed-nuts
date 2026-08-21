@@ -1,0 +1,71 @@
+SLURM job id: 21072
+SLURM array task id: 0
+Host: gpgpu02.hpc.local
+Project root: /home/hpc/users/viktor.najdovski/distributed-nuts
+Run root: /home/hpc/users/viktor.najdovski/abnuts_runs/21072
+Image: /home/hpc/users/viktor.najdovski/distributed-nuts/images/abnuts.sif
+Task: long_trace_funnel
+Config: /home/hpc/users/viktor.najdovski/distributed-nuts/configs/long_trace.yaml
+Profile: paper
+Backend: gpu
+Output directory: /home/hpc/users/viktor.najdovski/abnuts_runs/21072/raw/long_trace/paper_long_trace_funnel
+Log files: /home/hpc/users/viktor.najdovski/distributed-nuts/logs/abnuts-correctness-21072_0.out and /home/hpc/users/viktor.najdovski/distributed-nuts/logs/abnuts-correctness-21072_0.err
+SLURM time limit: 1-00:00:00; remaining at launch: 23:59:59
+Walltime guard cushion: 600s
+Walltime guard mode: auto from SLURM remaining time
+Fri May 29 09:32:36 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.05              Driver Version: 560.35.05      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:01:00.0 Off |                   On |
+| N/A   39C    P0             86W /  500W |       1MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          Off |   00000000:41:00.0 Off |                   On |
+| N/A   63C    P0            321W /  500W |    6698MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          Off |   00000000:81:00.0 Off |                   On |
+| N/A   47C    P0             93W /  500W |       1MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   37C    P0             87W /  500W |   77950MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    0   0   0  |               1MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 1MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+|  1    0   0   0  |            6698MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 5MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+|  2    0   0   0  |               1MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 1MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+|  3    0   0   0  |           77950MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 5MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    1    0    0     135582      C   /usr/bin/python3                             6694MiB |
+|    3    0    0       5946      C   VLLM::EngineCore                            77946MiB |
++-----------------------------------------------------------------------------------------+
+Running with local walltime guard: timeout=85798s kill_after=120s
+Wrote long-trace correctness outputs: /runs/raw/long_trace/paper_long_trace_funnel
+{"diagnostics_equal": true, "final_rng_keys_equal": true, "max_position_delta": 0.0, "metrics_equal": {"acceptance_statistic": true, "divergence_flag": true, "energy_error": true, "gradient_norm": true, "leapfrog_count": true, "max_tree_depth_hit": true, "realized_tree_depth": true}, "positions_equal": true, "saved_positions_equal": true}

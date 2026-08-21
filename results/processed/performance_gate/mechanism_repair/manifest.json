@@ -1,0 +1,22 @@
+{
+  "command": "python -m abnuts.analysis.performance_gate",
+  "gate_status": "FAIL",
+  "outputs": {
+    "gate_report_md": "results/processed/performance_gate/mechanism_repair/gate_report.md",
+    "gate_report_tex": "results/latex/performance_gate/mechanism_repair/gate_report.tex",
+    "gate_summary_csv": "results/processed/performance_gate/mechanism_repair/gate_summary.csv"
+  },
+  "sources": {
+    "correctness_dir": "results/raw/correctness/gp_tiny_mechanism_repair",
+    "heterogeneous_summaries": [
+      "results/raw/t40_per_bucket_executor/tiny_cpu/summary.csv",
+      "results/raw/t40_per_bucket_executor/tiny_cpu_bucket_scaling/summary.csv"
+    ],
+    "negative_control_summaries": [
+      "results/raw/performance_gate/homogeneous_negative_control_mechanism_repair/summary.csv"
+    ],
+    "oracle_gap_dir": "results/raw/oracle_gap/mechanism_repair",
+    "pre_repair_forensics_csv": "results/processed/performance_forensics/forensics_summary.csv",
+    "pre_repair_run_dir": "/home/hpc/users/viktor.najdovski/abnuts_runs/21070/raw"
+  }
+}

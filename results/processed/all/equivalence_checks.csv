@@ -1,0 +1,6 @@
+source_json,check_kind,max_position_delta,positions_equal,saved_positions_equal,diagnostics_equal,final_rng_keys_equal
+results/raw/correctness/bucket_tiny/equivalence.json,equivalence,0.0,True,,,True
+results/raw/long_trace/tiny/equivalence.json,equivalence,0.0,True,,,True
+results/raw/long_trace/tiny/trace_qa.json,trace_qa,0.0,True,True,True,True
+results/raw/trace_qa/tiny/equivalence.json,equivalence,0.0,True,,,True
+results/raw/trace_qa/tiny/trace_qa.json,trace_qa,0.0,True,True,True,True

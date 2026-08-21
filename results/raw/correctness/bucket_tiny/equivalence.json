@@ -1,0 +1,14 @@
+{
+  "final_rng_keys_equal": true,
+  "max_position_delta": 0.0,
+  "metrics_equal": {
+    "acceptance_statistic": true,
+    "divergence_flag": true,
+    "energy_error": true,
+    "gradient_norm": true,
+    "leapfrog_count": true,
+    "max_tree_depth_hit": true,
+    "realized_tree_depth": true
+  },
+  "positions_equal": true
+}

@@ -1,0 +1,79 @@
+{
+  "backend": "cpu",
+  "bucket_size": 4,
+  "bucketed_final_state": {
+    "position_shape": [
+      8,
+      4
+    ],
+    "potential_energy_grad_shape": [
+      8,
+      4
+    ],
+    "potential_energy_shape": [
+      8
+    ]
+  },
+  "bucketed_planner": {
+    "final_padding_ratio": 0.0,
+    "num_recorded_plans": 8
+  },
+  "command": "python -m abnuts.experiments.run_correctness",
+  "config_hash": "d461d3cc6c63689a1e4e96c48bb5b08ef53f63f59723de063d0706a6fff62d53",
+  "created_at_utc": "2026-05-25T17:03:36.713363+00:00",
+  "dimension": 4,
+  "dtype": "float32",
+  "equivalence": {
+    "final_rng_keys_equal": true,
+    "max_position_delta": 0.0,
+    "metrics_equal": {
+      "acceptance_statistic": true,
+      "divergence_flag": true,
+      "energy_error": true,
+      "gradient_norm": true,
+      "leapfrog_count": true,
+      "max_tree_depth_hit": true,
+      "realized_tree_depth": true
+    },
+    "positions_equal": true
+  },
+  "max_tree_depth": 3,
+  "method": "both",
+  "model": "funnel",
+  "monolithic_final_state": {
+    "position_shape": [
+      8,
+      4
+    ],
+    "potential_energy_grad_shape": [
+      8,
+      4
+    ],
+    "potential_energy_shape": [
+      8
+    ]
+  },
+  "num_chains": 8,
+  "num_steps": 8,
+  "output_dir": "results/raw/trace_qa/tiny",
+  "outputs": {
+    "bucketed_bucket_plan_csv": "bucketed_bucket_plan.csv",
+    "bucketed_events_jsonl": "bucketed_events.jsonl",
+    "bucketed_final_positions_csv": "bucketed_final_positions.csv",
+    "bucketed_per_iteration_csv": "bucketed_per_iteration.csv",
+    "bucketed_positions_csv": "bucketed_positions.csv",
+    "diagnostics_csv": "diagnostics.csv",
+    "equivalence_json": "equivalence.json",
+    "monolithic_events_jsonl": "monolithic_events.jsonl",
+    "monolithic_final_positions_csv": "monolithic_final_positions.csv",
+    "monolithic_per_iteration_csv": "monolithic_per_iteration.csv",
+    "monolithic_positions_csv": "monolithic_positions.csv",
+    "trace_qa_json": "trace_qa.json"
+  },
+  "predictor": "history",
+  "save_trace": true,
+  "schema_version": 1,
+  "seed": 0,
+  "status": "ok",
+  "step_size": 0.05
+}

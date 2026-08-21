@@ -1,0 +1,37 @@
+{
+  "benchmark": "gaussian_process",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "e97d944bc0d62c5db7d09217903ca2a05abc68dda8df40978df373c695399800",
+  "config_path": "configs/gaussian_process.yaml",
+  "config_sha256": "063b726b4a684b278a2045ee6c09dcde89fa44666c1152f11b21dc65f58406f4",
+  "created_at_utc": "2026-08-09T15:44:17.672875+00:00",
+  "model_metadata": {
+    "data_seed": 37,
+    "description": "Exact one-dimensional Gaussian-process regression marginal likelihood with a squared-exponential kernel.",
+    "dimension": 3,
+    "event_shape": [
+      3
+    ],
+    "input_dimension": 1,
+    "jitter": 1e-05,
+    "kernel": "squared_exponential",
+    "model_family": "gaussian_process",
+    "name": "gaussian_process",
+    "num_observations": 8,
+    "parameterization": "log_hyperparameters"
+  },
+  "output_dir": "results/raw/broad_sweep_accept_targeted/gaussian_process",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "scheduling",
+  "profiler_markers_enabled": false,
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 5,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": true,
+  "warm_repeats": 3,
+  "warm_timing_summary": "min of warm_repeats blocked repeats"
+}

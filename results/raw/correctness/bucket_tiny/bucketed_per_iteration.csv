@@ -1,0 +1,2 @@
+step,mean_acceptance_statistic,divergence_count,total_leapfrog_count,max_realized_tree_depth,mean_gradient_norm,max_tree_depth_hit_count
+1,0.9999698400497437,0,15,3,1.4953863620758057,0

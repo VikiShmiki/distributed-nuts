@@ -1,0 +1,29 @@
+scheduler_mode,scheduler_label,bucket_size,is_analysis_upper_bound,step,bucket_index,padding_count,fill_fraction,bucket_realized_max
+unsorted,unsorted,2,False,0,0,0,1,2
+unsorted,unsorted,2,False,0,1,0,1,1
+unsorted,unsorted,2,False,1,0,0,1,2
+unsorted,unsorted,2,False,1,1,0,1,2
+random,random,2,False,0,0,0,1,1
+random,random,2,False,0,1,0,1,2
+random,random,2,False,1,0,0,1,2
+random,random,2,False,1,1,0,1,1
+history,history,2,False,0,0,0,1,2
+history,history,2,False,0,1,0,1,1
+history,history,2,False,1,0,0,1,1
+history,history,2,False,1,1,0,1,2
+hvp,hvp,2,False,0,0,0,1,2
+hvp,hvp,2,False,0,1,0,1,1
+hvp,hvp,2,False,1,0,0,1,2
+hvp,hvp,2,False,1,1,0,1,1
+hybrid,hybrid,2,False,0,0,0,1,2
+hybrid,hybrid,2,False,0,1,0,1,1
+hybrid,hybrid,2,False,1,0,0,1,2
+hybrid,hybrid,2,False,1,1,0,1,1
+oracle_previous,oracle_previous,2,False,0,0,0,1,2
+oracle_previous,oracle_previous,2,False,0,1,0,1,1
+oracle_previous,oracle_previous,2,False,1,0,0,1,1
+oracle_previous,oracle_previous,2,False,1,1,0,1,2
+oracle_current,oracle_current (analysis-only upper bound),2,True,0,0,0,1,1
+oracle_current,oracle_current (analysis-only upper bound),2,True,0,1,0,1,2
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,0,0,1,1
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,1,2

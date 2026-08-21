@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "abnuts"
+version = "0.1.0"
+description = "Research implementation scaffold for asynchronous bucketed NUTS."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+authors = [
+  { name = "Asynchronous Bucketed NUTS contributors" },
+]
+dependencies = [
+  "arviz>=0.18",
+  "jax>=0.4.34,<0.5",
+  "PyYAML>=5.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/abnuts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]

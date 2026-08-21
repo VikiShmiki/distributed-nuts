@@ -1,0 +1,37 @@
+{
+  "backend": "cpu",
+  "command": "python -m abnuts.experiments.run_correctness",
+  "config_hash": "e969b6402133e40eb1729fe60fcf7544713c66e0148ce1f8dbb0653a9f57fe18",
+  "created_at_utc": "2026-05-25T12:12:31.793375+00:00",
+  "dimension": 4,
+  "dtype": "float32",
+  "final_state": {
+    "position_shape": [
+      8,
+      4
+    ],
+    "potential_energy_grad_shape": [
+      8,
+      4
+    ],
+    "potential_energy_shape": [
+      8
+    ]
+  },
+  "max_tree_depth": 3,
+  "method": "monolithic",
+  "model": "funnel",
+  "num_chains": 8,
+  "num_steps": 3,
+  "output_dir": "results/raw/correctness/mono_tiny",
+  "outputs": {
+    "events_jsonl": "events.jsonl",
+    "final_positions_csv": "final_positions.csv",
+    "per_iteration_csv": "per_iteration.csv",
+    "positions_csv": "positions.csv"
+  },
+  "schema_version": 1,
+  "seed": 0,
+  "status": "ok",
+  "step_size": 0.05
+}

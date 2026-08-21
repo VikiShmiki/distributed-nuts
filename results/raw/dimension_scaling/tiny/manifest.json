@@ -1,0 +1,18 @@
+{
+  "benchmark": "dimension_scaling",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "6b24730a55f02f0305b88cc42c658fa8abe5e43e50cec8cfaec284de41652228",
+  "config_path": "configs/dimension_scaling.yaml",
+  "config_sha256": "59e8fa1ec9d6840833a619d5d1497ac37e44dfccfbc3a7f58b121fceff1a6824",
+  "created_at_utc": "2026-05-25T16:55:32.389475+00:00",
+  "output_dir": "results/raw/dimension_scaling/tiny",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 2,
+  "schema_version": 1,
+  "status": "ok"
+}

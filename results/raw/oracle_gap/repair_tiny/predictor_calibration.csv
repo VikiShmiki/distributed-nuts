@@ -1,0 +1,57 @@
+benchmark,model,seed,scheduler_mode,scheduler_label,is_analysis_upper_bound,bucket_size,step,chain,predicted_work,realized_work,abs_error,is_summary_proxy
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,0,1.0,2.0,1.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,3,1.0,1.0,0.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,0,1.0,2.0,1.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,3,1.0,2.0,1.0,False
+oracle_gap,funnel,0,random,random,False,2,0,0,0.8724143505096436,2.0,1.1275856494903564,False
+oracle_gap,funnel,0,random,random,False,2,0,1,0.44302093982696533,1.0,0.5569790601730347,False
+oracle_gap,funnel,0,random,random,False,2,0,2,0.2770805358886719,1.0,0.7229194641113281,False
+oracle_gap,funnel,0,random,random,False,2,0,3,0.7865949869155884,1.0,0.21340501308441162,False
+oracle_gap,funnel,0,random,random,False,2,1,0,0.4736599922180176,2.0,1.5263400077819824,False
+oracle_gap,funnel,0,random,random,False,2,1,1,0.7860474586486816,1.0,0.21395254135131836,False
+oracle_gap,funnel,0,random,random,False,2,1,2,0.8806023597717285,1.0,0.11939764022827148,False
+oracle_gap,funnel,0,random,random,False,2,1,3,0.3833392858505249,2.0,1.616660714149475,False
+oracle_gap,funnel,0,history,history,False,2,0,0,1.0,2.0,1.0,False
+oracle_gap,funnel,0,history,history,False,2,0,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,history,history,False,2,0,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,history,history,False,2,0,3,1.0,1.0,0.0,False
+oracle_gap,funnel,0,history,history,False,2,1,0,1.100000023841858,2.0,0.8999999761581421,False
+oracle_gap,funnel,0,history,history,False,2,1,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,history,history,False,2,1,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,history,history,False,2,1,3,1.0,2.0,1.0,False
+oracle_gap,funnel,0,hvp,hvp,False,2,0,0,1.6465044021606445,2.0,0.35349559783935547,False
+oracle_gap,funnel,0,hvp,hvp,False,2,0,1,1.7430696487426758,1.0,0.7430696487426758,False
+oracle_gap,funnel,0,hvp,hvp,False,2,0,2,1.7504608631134033,1.0,0.7504608631134033,False
+oracle_gap,funnel,0,hvp,hvp,False,2,0,3,1.7026855945587158,1.0,0.7026855945587158,False
+oracle_gap,funnel,0,hvp,hvp,False,2,1,0,1.595095157623291,2.0,0.404904842376709,False
+oracle_gap,funnel,0,hvp,hvp,False,2,1,1,1.7430696487426758,1.0,0.7430696487426758,False
+oracle_gap,funnel,0,hvp,hvp,False,2,1,2,1.7504608631134033,1.0,0.7504608631134033,False
+oracle_gap,funnel,0,hvp,hvp,False,2,1,3,1.7026855945587158,2.0,0.2973144054412842,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,0,1.6465044021606445,2.0,0.35349559783935547,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,1,1.7430696487426758,1.0,0.7430696487426758,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,2,1.7504608631134033,1.0,0.7504608631134033,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,3,1.7026855945587158,1.0,0.7026855945587158,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,0,1.595095157623291,2.0,0.404904842376709,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,1,1.7430696487426758,1.0,0.7430696487426758,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,2,1.7504608631134033,1.0,0.7504608631134033,False
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,3,1.7026855945587158,2.0,0.2973144054412842,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,0,1.0,2.0,1.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,3,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,0,2.0,2.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,3,1.0,2.0,1.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,0,2.0,2.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,3,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,0,2.0,2.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,1,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,2,1.0,1.0,0.0,False
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,3,2.0,2.0,0.0,False

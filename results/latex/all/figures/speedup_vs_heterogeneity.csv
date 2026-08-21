@@ -1,0 +1,9 @@
+scheduler_mode,scheduler_label,bucket_size,is_analysis_upper_bound,speedup,heterogeneity
+monolithic,monolithic,0,False,1,0
+unsorted,unsorted,2,False,0.77729898,0.75
+random,random,2,False,3.2193666,0.5
+history,history,2,False,3.5581251,0.5
+hvp,hvp,2,False,2.0362117,0.5
+hybrid,hybrid,2,False,2.9554459,0.5
+oracle_previous,oracle_previous,2,False,3.2217966,0.5
+oracle_current,oracle_current (analysis-only upper bound),2,True,3.3404303,0.5

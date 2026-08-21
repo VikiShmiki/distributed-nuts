@@ -1,0 +1,19 @@
+[2026-08-21T01:25:16+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/funnel_ablation.yaml --profile t51_preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/funnel
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/funnel/summary.csv
+[2026-08-21T01:50:11+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/eight_schools.yaml --profile t51_preferred_centered --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/eight_schools_centered
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/eight_schools_centered/summary.csv
+[2026-08-21T02:24:56+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/eight_schools.yaml --profile t51_preferred_noncentered --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/eight_schools_noncentered
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/eight_schools_noncentered/summary.csv
+[2026-08-21T02:34:09+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/stochastic_volatility.yaml --profile t51_preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/stochastic_volatility
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/stochastic_volatility/summary.csv
+[2026-08-21T02:42:29+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/hierarchical_logistic.yaml --profile t51_preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/hierarchical_logistic
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/hierarchical_logistic/summary.csv
+[2026-08-21T02:51:29+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/gaussian_process.yaml --profile t51_preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/final_suite/gaussian_process
+Wrote benchmark summary: results/raw/t51_preferred/final_suite/gaussian_process/summary.csv
+[2026-08-21T04:00:28+02:00] python3 -m abnuts.experiments.run_oracle_gap --config configs/oracle_gap.yaml --profile t51_predictor_diagnostics --backend cpu --out results/raw/t51_preferred/predictor_diagnostics
+Wrote oracle-gap summary: results/raw/t51_preferred/predictor_diagnostics/summary.csv
+[2026-08-21T04:02:26+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/t51_scaling_funnel.yaml --profile preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/scaling/funnel
+Wrote benchmark summary: results/raw/t51_preferred/scaling/funnel/summary.csv
+[2026-08-21T05:00:17+02:00] python3 -m abnuts.experiments.run_benchmark --config configs/t51_scaling_gp.yaml --profile preferred --backend cpu --warm-repeats 30 --out results/raw/t51_preferred/scaling/gaussian_process
+Wrote benchmark summary: results/raw/t51_preferred/scaling/gaussian_process/summary.csv
+[2026-08-21T07:54:29+02:00] all T51 runs complete

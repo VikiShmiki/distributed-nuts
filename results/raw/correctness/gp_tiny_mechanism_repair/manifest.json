@@ -1,0 +1,106 @@
+{
+  "backend": "cpu",
+  "bucket_size": 4,
+  "bucketed_final_state": {
+    "position_shape": [
+      4,
+      3
+    ],
+    "potential_energy_grad_shape": [
+      4,
+      3
+    ],
+    "potential_energy_shape": [
+      4
+    ]
+  },
+  "bucketed_planner": {
+    "final_padding_ratio": 0.0,
+    "num_recorded_plans": 1
+  },
+  "command": "python -m abnuts.experiments.run_correctness",
+  "config_hash": "aa407c5fc51c9c5983c9e1e014e96e21c61a7003fca5af1fef1f62f27e59a7ca",
+  "created_at_utc": "2026-08-09T02:26:18.660304+00:00",
+  "dimension": 3,
+  "dtype": "float32",
+  "equivalence": {
+    "discrete_metrics_exact": true,
+    "equivalence_passed": true,
+    "final_rng_keys_equal": true,
+    "float_atol": 1e-05,
+    "float_metrics_within_tolerance": true,
+    "float_rtol": 1e-05,
+    "max_position_delta": 0.0,
+    "metric_max_abs_delta": {
+      "acceptance_statistic": 0.0,
+      "energy_error": 0.0,
+      "gradient_norm": 0.0
+    },
+    "metric_mismatch_count": {
+      "acceptance_statistic": 0,
+      "divergence_flag": 0,
+      "energy_error": 0,
+      "gradient_norm": 0,
+      "leapfrog_count": 0,
+      "max_tree_depth_hit": 0,
+      "realized_tree_depth": 0
+    },
+    "metrics_allclose": {
+      "acceptance_statistic": true,
+      "divergence_flag": true,
+      "energy_error": true,
+      "gradient_norm": true,
+      "leapfrog_count": true,
+      "max_tree_depth_hit": true,
+      "realized_tree_depth": true
+    },
+    "metrics_equal": {
+      "acceptance_statistic": true,
+      "divergence_flag": true,
+      "energy_error": true,
+      "gradient_norm": true,
+      "leapfrog_count": true,
+      "max_tree_depth_hit": true,
+      "realized_tree_depth": true
+    },
+    "positions_allclose": true,
+    "positions_equal": true
+  },
+  "max_tree_depth": 2,
+  "method": "both",
+  "model": "gaussian_process",
+  "monolithic_final_state": {
+    "position_shape": [
+      4,
+      3
+    ],
+    "potential_energy_grad_shape": [
+      4,
+      3
+    ],
+    "potential_energy_shape": [
+      4
+    ]
+  },
+  "num_chains": 4,
+  "num_steps": 1,
+  "output_dir": "results/raw/correctness/gp_tiny_mechanism_repair",
+  "outputs": {
+    "bucketed_bucket_plan_csv": "bucketed_bucket_plan.csv",
+    "bucketed_events_jsonl": "bucketed_events.jsonl",
+    "bucketed_final_positions_csv": "bucketed_final_positions.csv",
+    "bucketed_per_iteration_csv": "bucketed_per_iteration.csv",
+    "bucketed_positions_csv": "bucketed_positions.csv",
+    "equivalence_json": "equivalence.json",
+    "monolithic_events_jsonl": "monolithic_events.jsonl",
+    "monolithic_final_positions_csv": "monolithic_final_positions.csv",
+    "monolithic_per_iteration_csv": "monolithic_per_iteration.csv",
+    "monolithic_positions_csv": "monolithic_positions.csv"
+  },
+  "predictor": "history",
+  "save_trace": false,
+  "schema_version": 1,
+  "seed": 0,
+  "status": "ok",
+  "step_size": 0.005
+}

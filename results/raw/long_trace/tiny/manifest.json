@@ -1,0 +1,47 @@
+{
+  "benchmark": "long_trace",
+  "command": "python -m abnuts.experiments.run_long_trace",
+  "config_hash": "1d2cdfd3db39707a8fab0d70218a2c30b0dee01cb7b1bb3d3dec2e1665576207",
+  "config_path": "configs/long_trace.yaml",
+  "config_sha256": "8af4173fc2d5f34e6374cbc1cee642da6498ef256c2d7571beccc3cd06066dcd",
+  "created_at_utc": "2026-05-25T23:24:55.497903+00:00",
+  "equivalence": {
+    "diagnostics_equal": true,
+    "final_rng_keys_equal": true,
+    "max_position_delta": 0.0,
+    "metrics_equal": {
+      "acceptance_statistic": true,
+      "divergence_flag": true,
+      "energy_error": true,
+      "gradient_norm": true,
+      "leapfrog_count": true,
+      "max_tree_depth_hit": true,
+      "realized_tree_depth": true
+    },
+    "positions_equal": true,
+    "saved_positions_equal": true
+  },
+  "model_metadata": {
+    "description": "Neal's funnel with y ~ Normal(0, scale_std) and x_i | y ~ Normal(0, exp(y / 2)).",
+    "dimension": 4,
+    "event_shape": [
+      4
+    ],
+    "name": "funnel"
+  },
+  "output_dir": "results/raw/long_trace/tiny",
+  "outputs": {
+    "bucketed_bucket_plan_csv": "bucketed_bucket_plan.csv",
+    "bucketed_positions_csv": "bucketed_positions.csv",
+    "diagnostics_csv": "diagnostics.csv",
+    "equivalence_json": "equivalence.json",
+    "manifest_json": "manifest.json",
+    "monolithic_positions_csv": "monolithic_positions.csv",
+    "trace_qa_json": "trace_qa.json"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "schema_version": 1,
+  "status": "ok"
+}

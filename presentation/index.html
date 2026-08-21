@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b18">
+  <title>Work-Aware Bucketed NUTS — Visual Presentation</title>
+  <style>
+    :root {
+      --bg: #070b18;
+      --panel: rgba(17, 25, 48, .62);
+      --line: rgba(255,255,255,.12);
+      --text: #f6f8ff;
+      --muted: #a9b3cc;
+      --cyan: #5ee7f7;
+      --violet: #9d7bff;
+      --pink: #ff6fb5;
+      --lime: #8ef0a7;
+      --amber: #ffc76b;
+      --danger: #ff7185;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body {
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(67,105,255,.18), transparent 30%),
+        radial-gradient(circle at 88% 78%, rgba(255,74,178,.13), transparent 32%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .18;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+    .aurora { position: fixed; inset: -30%; filter: blur(90px); opacity: .16; pointer-events: none; }
+    .aurora::before, .aurora::after { content:""; position:absolute; width:42vw; height:42vw; border-radius:50%; animation: drift 14s ease-in-out infinite alternate; }
+    .aurora::before { left:20%; top:18%; background:var(--violet); }
+    .aurora::after { right:18%; bottom:12%; background:var(--cyan); animation-delay:-7s; }
+    @keyframes drift { to { transform: translate(14vw, 8vh) scale(1.18); } }
+
+    .deck { position: relative; width: 100%; height: 100%; }
+    .slide {
+      position: absolute; inset: 0; padding: clamp(2rem, 5vw, 5rem) clamp(2rem, 7vw, 7rem) clamp(4.5rem, 8vh, 6rem);
+      display: grid; align-content: center; opacity: 0; visibility: hidden;
+      transform: translateX(48px) scale(.985); transition: opacity .55s var(--ease), transform .55s var(--ease), visibility .55s;
+    }
+    .slide.active { opacity: 1; visibility: visible; transform: none; z-index: 2; }
+    .slide.before { transform: translateX(-48px) scale(.985); }
+    .slide > * { position: relative; z-index: 1; }
+    .kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .19em; font-size: clamp(.72rem, 1vw, .95rem); font-weight: 800; margin: 0 0 1rem; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(3.1rem, 7.8vw, 8.6rem); line-height: .9; letter-spacing: -.065em; margin-bottom: 1.35rem; max-width: 12ch; }
+    h2 { font-size: clamp(2.35rem, 5.3vw, 5.8rem); line-height: .95; letter-spacing: -.055em; margin-bottom: clamp(1.3rem, 3vh, 2.5rem); max-width: 13ch; }
+    .gradient-text { color: transparent; background: linear-gradient(100deg, var(--cyan), #c5b8ff 52%, var(--pink)); background-clip: text; -webkit-background-clip: text; }
+    .subtitle { font-size: clamp(1rem, 1.7vw, 1.55rem); color: var(--muted); max-width: 48rem; line-height: 1.5; }
+    .tiny { font-size: clamp(.68rem, .85vw, .82rem); color: var(--muted); letter-spacing: .03em; }
+    .big-number { font-size: clamp(3.1rem, 6vw, 6.8rem); line-height: .9; font-weight: 850; letter-spacing: -.06em; }
+    .glass { background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035)); border: 1px solid var(--line); border-radius: 26px; box-shadow: 0 28px 80px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.08); backdrop-filter: blur(18px); }
+    .grid-2 { display:grid; grid-template-columns: minmax(0, .88fr) minmax(380px, 1.12fr); gap: clamp(2rem, 6vw, 7rem); align-items:center; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.7rem); }
+    .pill { display:inline-flex; align-items:center; gap:.55rem; padding:.55rem .85rem; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:rgba(255,255,255,.04); font-size:.82rem; }
+    .dot { width:.52rem; height:.52rem; border-radius:50%; background:var(--cyan); box-shadow:0 0 16px var(--cyan); }
+
+    .hero-art { position:absolute; right:3vw; top:50%; width:min(48vw,760px); transform:translateY(-50%); opacity:.9; }
+    .orbit { transform-origin: 50% 50%; animation: spin 18s linear infinite; }
+    .orbit.reverse { animation-direction:reverse; animation-duration:25s; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .pulse { animation:pulse 2.4s ease-in-out infinite; transform-origin:center; }
+    @keyframes pulse { 50% { opacity:.42; transform:scale(.78); } }
+    .draw { stroke-dasharray: 900; stroke-dashoffset:900; }
+    .active .draw { animation: draw 2.2s .25s var(--ease) forwards; }
+    @keyframes draw { to { stroke-dashoffset:0; } }
+
+    .posterior-card { padding:1rem; min-height:min(58vh,570px); display:grid; place-items:center; position:relative; overflow:hidden; }
+    .posterior-card::after { content:"posterior landscape"; position:absolute; left:1.2rem; bottom:1rem; color:var(--muted); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+    .sample-dot { animation: samplePop .5s var(--ease) both; transform-origin:center; }
+    .sample-dot:nth-of-type(2n){animation-delay:.12s}.sample-dot:nth-of-type(3n){animation-delay:.24s}.sample-dot:nth-of-type(5n){animation-delay:.36s}
+    @keyframes samplePop { from { opacity:0; transform:scale(0); } }
+
+    .nuts-visual { min-height:min(59vh,590px); padding:1.2rem; position:relative; overflow:hidden; }
+    .nuts-label { position:absolute; padding:.55rem .8rem; border-radius:999px; background:rgba(7,11,24,.78); border:1px solid var(--line); font-size:.78rem; color:var(--muted); }
+    .nuts-label.start { left:16%; top:62%; } .nuts-label.turn { right:10%; top:24%; color:var(--pink); }
+
+    .timeline { padding:clamp(1.2rem,2.5vw,2rem); }
+    .lane { display:grid; grid-template-columns: 52px 1fr; align-items:center; gap:1rem; margin:.9rem 0; }
+    .lane-name { color:var(--muted); font-size:.75rem; text-align:right; }
+    .track { height:24px; border-radius:7px; background:rgba(255,255,255,.055); position:relative; overflow:hidden; }
+    .work { height:100%; border-radius:7px; width:var(--w); background:linear-gradient(90deg,var(--cyan),var(--violet)); box-shadow:0 0 20px rgba(94,231,247,.2); transform-origin:left; }
+    .active .work { animation:grow 1.1s var(--ease) both; }
+    @keyframes grow { from { transform:scaleX(0); } }
+    .idle { position:absolute; left:var(--w); right:0; top:0; bottom:0; background:repeating-linear-gradient(135deg,transparent 0 7px,rgba(255,113,133,.22) 7px 12px); }
+    .barrier { position:absolute; right:0; top:-10px; bottom:-10px; border-right:2px dashed var(--pink); }
+    .waste-callout { color:var(--pink); font-weight:750; font-size:clamp(1rem,1.4vw,1.3rem); text-align:right; margin-top:1rem; }
+
+    .bucket-wrap { display:grid; grid-template-columns:1fr auto 1fr; gap:1.2rem; align-items:center; }
+    .mini-lanes { padding:1.2rem; }
+    .mini-lane { height:13px; margin:8px 0; border-radius:4px; width:var(--w); background:linear-gradient(90deg,var(--cyan),var(--violet)); }
+    .bucket-stack { display:grid; gap:.75rem; }
+    .bucket { padding:.75rem; border-radius:15px; border:1px solid var(--line); background:rgba(255,255,255,.035); }
+    .bucket:nth-child(1){border-color:rgba(94,231,247,.35)} .bucket:nth-child(2){border-color:rgba(157,123,255,.42)} .bucket:nth-child(3){border-color:rgba(255,111,181,.35)}
+    .arrow { color:var(--cyan); font-size:2rem; }
+
+    .pipeline { display:grid; grid-template-columns:repeat(7,auto); align-items:center; justify-content:center; gap:clamp(.5rem,1.3vw,1.4rem); }
+    .stage { width:clamp(98px,11vw,150px); aspect-ratio:1.08; display:grid; place-items:center; text-align:center; padding:.8rem; border-radius:20px; border:1px solid var(--line); background:rgba(255,255,255,.045); }
+    .stage strong { display:block; margin-top:.6rem; font-size:clamp(.72rem,1vw,.92rem); }
+    .stage svg { width:44px; height:44px; }
+    .pipeline-arrow { color:var(--muted); }
+    .device-bracket { margin:2rem auto 0; width:min(570px,65%); border-top:1px solid var(--violet); color:#c9bcff; text-align:center; padding-top:.75rem; font-size:.82rem; }
+
+    .check-ring { width:min(25vw,260px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; border:1px solid rgba(142,240,167,.35); background:radial-gradient(circle,rgba(142,240,167,.15),transparent 68%); box-shadow:0 0 70px rgba(142,240,167,.1); margin:auto; }
+    .check-ring span { font-size:clamp(3.5rem,8vw,7rem); color:var(--lime); }
+    .invariants { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .invariant { min-height:118px; padding:1.2rem; display:flex; flex-direction:column; justify-content:flex-end; }
+    .invariant svg { width:32px; height:32px; margin-bottom:auto; color:var(--cyan); }
+    .invariant strong { font-size:1.05rem; }
+    .invariant small { color:var(--muted); margin-top:.25rem; }
+
+    .chart-card { padding:clamp(1rem,2vw,1.7rem); }
+    .legend { display:flex; gap:1.2rem; justify-content:center; color:var(--muted); font-size:.8rem; }
+    .legend i { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:.4rem; }
+    .result-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1rem; }
+    .result { padding:1rem 1.15rem; min-height:106px; }
+    .result .number { font-size:clamp(1.7rem,3vw,3rem); font-weight:850; letter-spacing:-.05em; }
+    .result small { display:block; color:var(--muted); margin-top:.25rem; }
+
+    .takeaway { padding:clamp(1.3rem,2.3vw,2rem); min-height:250px; position:relative; overflow:hidden; }
+    .takeaway .index { font-size:.75rem; color:var(--muted); letter-spacing:.15em; }
+    .takeaway h3 { margin:2.6rem 0 .6rem; font-size:clamp(1.5rem,2.6vw,2.6rem); line-height:1; letter-spacing:-.045em; }
+    .takeaway p { color:var(--muted); line-height:1.45; max-width:25ch; }
+    .takeaway::after { content:""; position:absolute; width:150px; height:150px; border-radius:50%; right:-50px; top:-50px; background:var(--glow); filter:blur(35px); opacity:.25; }
+
+    .nav { position:fixed; z-index:20; left:50%; bottom:max(1rem, env(safe-area-inset-bottom)); transform:translateX(-50%); display:flex; align-items:center; gap:.75rem; padding:.55rem .7rem; border:1px solid var(--line); border-radius:999px; background:rgba(7,11,24,.72); backdrop-filter:blur(18px); }
+    .nav button { appearance:none; border:0; color:var(--text); background:transparent; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.05rem; transition:.2s; }
+    .nav button:hover { background:rgba(255,255,255,.1); }
+    .dots { display:flex; gap:.42rem; align-items:center; }
+    .dots button { width:7px; height:7px; padding:0; background:rgba(255,255,255,.25); }
+    .dots button.active { width:22px; border-radius:8px; background:linear-gradient(90deg,var(--cyan),var(--violet)); }
+    .counter { position:fixed; right:clamp(1.2rem,3vw,2.5rem); top:clamp(1.2rem,3vw,2rem); z-index:20; color:var(--muted); font-variant-numeric:tabular-nums; font-size:.75rem; letter-spacing:.12em; }
+    .brand { position:fixed; left:clamp(1.2rem,3vw,2.5rem); top:clamp(1.2rem,3vw,2rem); z-index:20; font-size:.74rem; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; }
+    .hint { position:fixed; right:2rem; bottom:1.5rem; z-index:10; color:rgba(255,255,255,.35); font-size:.7rem; }
+
+    @media (max-width: 850px) {
+      .slide { overflow:auto; align-content:start; padding-top:5rem; }
+      .grid-2 { grid-template-columns:1fr; gap:1.5rem; }
+      .grid-3 { grid-template-columns:1fr; }
+      .hero-art { position:relative; width:95%; right:auto; top:auto; transform:none; margin:1rem auto 0; }
+      .posterior-card,.nuts-visual { min-height:390px; }
+      .pipeline { grid-template-columns:1fr; }
+      .pipeline-arrow { transform:rotate(90deg); text-align:center; }
+      .device-bracket { width:90%; }
+      .result-strip { grid-template-columns:1fr 1fr; }
+      .hint { display:none; }
+    }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition-duration:.01ms!important; } }
+    @media print {
+      html,body { overflow:visible; background:#07101f; }
+      .aurora,.nav,.counter,.brand,.hint { display:none; }
+      .slide { position:relative; opacity:1!important; visibility:visible!important; transform:none!important; min-height:100vh; break-after:page; }
+    }
+  </style>
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="brand">Parallel Systems × Bayesian Computing</div>
+  <div class="counter" aria-live="polite"><span id="current">01</span> / <span id="total">09</span></div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" aria-label="Title slide">
+      <div style="max-width:65vw">
+        <p class="kicker">A load-balancing story</p>
+        <h1>Work-Aware<br><span class="gradient-text">Bucketed NUTS</span></h1>
+        <p class="subtitle">Can smarter scheduling make many adaptive simulations finish sooner?</p>
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem">
+          <span class="pill"><span class="dot"></span> JAX</span>
+          <span class="pill">dynamic workloads</span>
+          <span class="pill">exact transitions</span>
+        </div>
+      </div>
+      <svg class="hero-art" viewBox="0 0 700 700" role="img" aria-label="Orbiting parallel chains">
+        <defs><radialGradient id="core"><stop stop-color="#5ee7f7" stop-opacity=".8"/><stop offset="1" stop-color="#5ee7f7" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="350" cy="350" r="120" fill="url(#core)" class="pulse"/>
+        <g fill="none" stroke="rgba(255,255,255,.14)"><ellipse cx="350" cy="350" rx="245" ry="112" transform="rotate(-22 350 350)"/><ellipse cx="350" cy="350" rx="180" ry="285" transform="rotate(35 350 350)"/><ellipse cx="350" cy="350" rx="305" ry="210" transform="rotate(18 350 350)"/></g>
+        <g class="orbit" style="transform-origin:350px 350px"><circle cx="115" cy="300" r="10" fill="#5ee7f7"/><circle cx="565" cy="248" r="7" fill="#9d7bff"/><circle cx="380" cy="72" r="9" fill="#ff6fb5"/><circle cx="632" cy="450" r="6" fill="#8ef0a7"/></g>
+        <g class="orbit reverse" style="transform-origin:350px 350px"><circle cx="180" cy="520" r="8" fill="#ffc76b"/><circle cx="476" cy="570" r="7" fill="#5ee7f7"/><circle cx="302" cy="210" r="6" fill="#ff6fb5"/></g>
+      </svg>
+    </section>
+
+    <section class="slide" aria-label="Why sampling">
+      <div class="grid-2">
+        <div>
+          <p class="kicker">First: why sample?</p>
+          <h2>We want <span class="gradient-text">uncertainty</span>, not one answer.</h2>
+          <p class="subtitle">Bayesian models describe many plausible explanations. Samples turn that shape into quantities we can use.</p>
+          <div style="display:flex;align-items:center;gap:1rem;margin-top:2rem;color:var(--muted)">
+            <span>model</span><span style="color:var(--cyan)">→</span><span>samples</span><span style="color:var(--cyan)">→</span><span>decisions</span>
+          </div>
+        </div>
+        <div class="posterior-card glass">
+          <svg viewBox="0 0 620 460" width="100%" role="img" aria-label="Probability landscape with representative samples">
+            <defs>
+              <radialGradient id="hillA"><stop stop-color="#5ee7f7" stop-opacity=".35"/><stop offset="1" stop-color="#5ee7f7" stop-opacity="0"/></radialGradient>
+              <radialGradient id="hillB"><stop stop-color="#ff6fb5" stop-opacity=".27"/><stop offset="1" stop-color="#ff6fb5" stop-opacity="0"/></radialGradient>
+            </defs>
+            <ellipse cx="220" cy="260" rx="190" ry="132" fill="url(#hillA)"/>
+            <ellipse cx="430" cy="165" rx="135" ry="105" fill="url(#hillB)"/>
+            <g fill="none" stroke="#5ee7f7" opacity=".4"><ellipse cx="220" cy="260" rx="160" ry="105"/><ellipse cx="220" cy="260" rx="115" ry="72"/><ellipse cx="220" cy="260" rx="65" ry="39"/></g>
+            <g fill="none" stroke="#ff6fb5" opacity=".36"><ellipse cx="430" cy="165" rx="110" ry="78"/><ellipse cx="430" cy="165" rx="70" ry="48"/></g>
+            <g fill="#fff">
+              <circle class="sample-dot" cx="143" cy="246" r="4"/><circle class="sample-dot" cx="198" cy="300" r="4"/><circle class="sample-dot" cx="250" cy="235" r="4"/><circle class="sample-dot" cx="313" cy="271" r="4"/><circle class="sample-dot" cx="181" cy="201" r="4"/><circle class="sample-dot" cx="219" cy="269" r="4"/><circle class="sample-dot" cx="274" cy="312" r="4"/><circle class="sample-dot" cx="118" cy="291" r="4"/><circle class="sample-dot" cx="405" cy="139" r="4"/><circle class="sample-dot" cx="448" cy="179" r="4"/><circle class="sample-dot" cx="485" cy="130" r="4"/><circle class="sample-dot" cx="389" cy="198" r="4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="What is NUTS">
+      <div class="grid-2">
+        <div>
+          <p class="kicker">No-U-Turn Sampler</p>
+          <h2>A smart walk through a probability landscape.</h2>
+          <div class="grid-3" style="grid-template-columns:repeat(3,auto);margin-top:2rem">
+            <span class="pill">① accelerate</span><span class="pill">② explore</span><span class="pill">③ stop at U-turn</span>
+          </div>
+        </div>
+        <div class="nuts-visual glass">
+          <svg viewBox="0 0 650 470" width="100%" height="100%" role="img" aria-label="NUTS trajectory curving until a U-turn">
+            <defs><radialGradient id="terrain"><stop stop-color="#9d7bff" stop-opacity=".26"/><stop offset="1" stop-color="#9d7bff" stop-opacity="0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <ellipse cx="330" cy="260" rx="270" ry="165" fill="url(#terrain)"/>
+            <g fill="none" stroke="rgba(255,255,255,.1)"><ellipse cx="330" cy="260" rx="245" ry="140"/><ellipse cx="330" cy="260" rx="185" ry="100"/><ellipse cx="330" cy="260" rx="118" ry="58"/></g>
+            <path class="draw" d="M110 330 C155 260 190 355 245 288 S342 178 426 205 S542 200 555 126 C559 97 532 84 507 100" fill="none" stroke="#5ee7f7" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+            <g fill="#fff"><circle cx="110" cy="330" r="8"/><circle cx="245" cy="288" r="5"/><circle cx="426" cy="205" r="5"/></g>
+            <path d="M530 93 l-22 7 10 20" fill="none" stroke="#ff6fb5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="nuts-label start">start</div><div class="nuts-label turn">turning back → stop</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="Parallel straggler problem">
+      <div class="grid-2">
+        <div>
+          <p class="kicker">The parallel problem</p>
+          <h2>One long chain holds everyone back.</h2>
+          <p class="subtitle">A vectorized loop ends only when its slowest lane ends.</p>
+          <div class="pill" style="margin-top:1.5rem"><span class="dot" style="background:var(--pink);box-shadow:0 0 16px var(--pink)"></span> control-flow divergence</div>
+        </div>
+        <div class="timeline glass">
+          <div style="position:relative">
+            <div class="lane"><div class="lane-name">chain 1</div><div class="track"><div class="work" style="--w:28%"></div><div class="idle" style="--w:28%"></div></div></div>
+            <div class="lane"><div class="lane-name">chain 2</div><div class="track"><div class="work" style="--w:47%"></div><div class="idle" style="--w:47%"></div></div></div>
+            <div class="lane"><div class="lane-name">chain 3</div><div class="track"><div class="work" style="--w:35%"></div><div class="idle" style="--w:35%"></div></div></div>
+            <div class="lane"><div class="lane-name">chain 4</div><div class="track"><div class="work" style="--w:100%;background:linear-gradient(90deg,var(--violet),var(--pink))"></div></div></div>
+            <div class="lane"><div class="lane-name">chain 5</div><div class="track"><div class="work" style="--w:52%"></div><div class="idle" style="--w:52%"></div></div></div>
+            <div class="barrier"></div>
+          </div>
+          <div class="waste-callout">striped = waiting / masked work</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="Bucketing idea">
+      <p class="kicker">The scheduling idea</p>
+      <h2 style="max-width:18ch">Predict → sort → run similar chains together.</h2>
+      <div class="bucket-wrap">
+        <div class="mini-lanes glass">
+          <div class="tiny" style="margin-bottom:.8rem">mixed workload</div>
+          <div class="mini-lane" style="--w:28%"></div><div class="mini-lane" style="--w:91%"></div><div class="mini-lane" style="--w:43%"></div><div class="mini-lane" style="--w:68%"></div><div class="mini-lane" style="--w:34%"></div><div class="mini-lane" style="--w:96%"></div><div class="mini-lane" style="--w:61%"></div><div class="mini-lane" style="--w:40%"></div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="bucket-stack">
+          <div class="bucket"><div class="tiny">short bucket</div><div class="mini-lane" style="--w:30%"></div><div class="mini-lane" style="--w:34%"></div><div class="mini-lane" style="--w:40%"></div></div>
+          <div class="bucket"><div class="tiny">medium bucket</div><div class="mini-lane" style="--w:55%"></div><div class="mini-lane" style="--w:61%"></div><div class="mini-lane" style="--w:68%"></div></div>
+          <div class="bucket"><div class="tiny">long bucket</div><div class="mini-lane" style="--w:91%"></div><div class="mini-lane" style="--w:96%"></div></div>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--muted);margin:1.4rem 0 0">Each bucket gets its own stopping condition.</p>
+    </section>
+
+    <section class="slide" aria-label="System architecture">
+      <p class="kicker" style="text-align:center">Host planning + compiled fixed shapes</p>
+      <h2 style="text-align:center;max-width:none">A scheduling layer around the same sampler.</h2>
+      <div class="pipeline">
+        <div class="stage"><svg viewBox="0 0 48 48" fill="none" stroke="#5ee7f7" stroke-width="2"><path d="M8 36h32M12 30l8-9 7 5 10-15"/><circle cx="12" cy="30" r="2"/><circle cx="20" cy="21" r="2"/><circle cx="27" cy="26" r="2"/><circle cx="37" cy="11" r="2"/></svg><strong>predict work</strong></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="stage"><svg viewBox="0 0 48 48" fill="none" stroke="#9d7bff" stroke-width="2"><path d="M10 12h12M10 24h22M10 36h30"/><path d="m34 10 5 5 5-5M39 15V5"/></svg><strong>sort + pad</strong></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="stage"><svg viewBox="0 0 48 48" fill="none" stroke="#ff6fb5" stroke-width="2"><rect x="6" y="8" width="36" height="32" rx="4"/><path d="M6 19h36M6 29h36M18 8v32M30 8v32"/></svg><strong>fixed buckets</strong></div>
+        <div class="pipeline-arrow">→</div>
+        <div class="stage"><svg viewBox="0 0 48 48" fill="none" stroke="#8ef0a7" stroke-width="2"><rect x="9" y="9" width="30" height="30" rx="5"/><path d="M18 4v8M30 4v8M18 36v8M30 36v8M4 18h8M4 30h8M36 18h8M36 30h8"/><path d="m18 25 4 4 9-11"/></svg><strong>compiled executor</strong></div>
+      </div>
+      <div class="device-bracket">JAX device program · independent bucket loops · no Python loop in the hot path</div>
+    </section>
+
+    <section class="slide" aria-label="Correctness">
+      <div class="grid-2">
+        <div class="check-ring"><span>✓</span></div>
+        <div>
+          <p class="kicker">The non-negotiable constraint</p>
+          <h2>Faster execution.<br>Same transition.</h2>
+          <div class="invariants">
+            <div class="invariant glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 16h20M16 6v20"/><circle cx="16" cy="16" r="12"/></svg><strong>same positions</strong><small>strict tolerance</small></div>
+            <div class="invariant glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 8h16v16H8zM4 12h4M4 20h4M24 12h4M24 20h4"/></svg><strong>same RNG stream</strong><small>exact keys</small></div>
+            <div class="invariant glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 25 12 9l6 14 4-9 5 11"/></svg><strong>same trajectory</strong><small>depth + leapfrogs</small></div>
+            <div class="invariant glass"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4v24M4 16h24"/><path d="m9 9 14 14M23 9 9 23"/></svg><strong>padding is inert</strong><small>masked lanes</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="Results">
+      <div class="grid-2" style="grid-template-columns:minmax(360px,.9fr) minmax(500px,1.1fr)">
+        <div>
+          <p class="kicker">What happened on CPU?</p>
+          <h2>Scale pays the scheduling bill.</h2>
+          <div class="result-strip">
+            <div class="result glass"><div class="number" style="color:var(--lime)">1.31×</div><small>Funnel · 1024 chains</small></div>
+            <div class="result glass"><div class="number" style="color:var(--cyan)">1.14×</div><small>GP · 1024 chains</small></div>
+            <div class="result glass"><div class="number">6/36</div><small>final configs above 1×</small></div>
+          </div>
+          <p class="tiny" style="margin-top:1.2rem">5 seeds × 30 warm repetitions · all transition metrics matched</p>
+        </div>
+        <div class="chart-card glass">
+          <svg viewBox="0 0 660 390" width="100%" role="img" aria-label="Speedup rises with chain count for funnel and Gaussian process">
+            <g stroke="rgba(255,255,255,.1)" stroke-width="1"><path d="M82 60v265h520"/><path d="M82 267h520" stroke="#fff" stroke-dasharray="6 7" opacity=".5"/><path d="M82 164h520"/><path d="M82 94h520"/></g>
+            <g fill="#a9b3cc" font-size="13"><text x="44" y="271">1.0×</text><text x="44" y="168">1.2×</text><text x="44" y="98">1.3×</text><text x="95" y="350">128</text><text x="245" y="350">256</text><text x="395" y="350">512</text><text x="548" y="350">1024</text><text x="285" y="378">number of chains</text></g>
+            <path class="draw" d="M110 286 L260 306 L410 264 L560 88" fill="none" stroke="#ff6fb5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="draw" d="M110 302 L260 288 L410 263 L560 197" fill="none" stroke="#5ee7f7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#ff6fb5"><circle cx="110" cy="286" r="7"/><circle cx="260" cy="306" r="7"/><circle cx="410" cy="264" r="7"/><circle cx="560" cy="88" r="8"/></g>
+            <g fill="#5ee7f7"><circle cx="110" cy="302" r="7"/><circle cx="260" cy="288" r="7"/><circle cx="410" cy="263" r="7"/><circle cx="560" cy="197" r="8"/></g>
+          </svg>
+          <div class="legend"><span><i style="background:var(--pink)"></i>Funnel</span><span><i style="background:var(--cyan)"></i>Gaussian process</span><span>— — break-even</span></div>
+        </div>
+      </div>
+      <div style="position:absolute;right:7vw;bottom:5.3rem" class="pill"><span class="dot" style="background:var(--amber);box-shadow:none"></span> GPU result: rejected by controls</div>
+    </section>
+
+    <section class="slide" aria-label="Takeaways">
+      <p class="kicker">Three things to remember</p>
+      <h2 style="max-width:18ch">Less wasted work ≠ always less time.</h2>
+      <div class="grid-3">
+        <article class="takeaway glass" style="--glow:var(--cyan)"><span class="index">01 · MECHANISM</span><h3>Bucket the stragglers.</h3><p>Independent stopping domains reduce lockstep waste.</p></article>
+        <article class="takeaway glass" style="--glow:var(--lime)"><span class="index">02 · CORRECTNESS</span><h3>Never change the chain.</h3><p>Scheduling may move work—not the Markov transition.</p></article>
+        <article class="takeaway glass" style="--glow:var(--pink)"><span class="index">03 · LIMIT</span><h3>Overhead decides.</h3><p>Prediction, movement, and narrow buckets must be amortized.</p></article>
+      </div>
+      <p style="text-align:center;margin:2rem 0 0;color:var(--muted)">A parallel-systems result: <strong style="color:var(--text)">load balancing only wins when the saved work is worth more than the scheduler.</strong></p>
+    </section>
+  </main>
+
+  <nav class="nav" aria-label="Slide navigation">
+    <button id="prev" aria-label="Previous slide">←</button>
+    <div class="dots" id="dots"></div>
+    <button id="next" aria-label="Next slide">→</button>
+  </nav>
+  <div class="hint">← → navigate · F fullscreen</div>
+
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const dots = document.getElementById('dots');
+      const current = document.getElementById('current');
+      const total = document.getElementById('total');
+      let index = Math.max(0, Math.min(slides.length - 1, Number(location.hash.slice(1)) - 1 || 0));
+      total.textContent = String(slides.length).padStart(2, '0');
+
+      slides.forEach((_, i) => {
+        const button = document.createElement('button');
+        button.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        button.addEventListener('click', () => show(i));
+        dots.appendChild(button);
+      });
+      const dotButtons = [...dots.children];
+
+      function show(nextIndex, updateHash = true) {
+        index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+          slide.classList.toggle('before', i < index);
+          slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+        });
+        dotButtons.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        current.textContent = String(index + 1).padStart(2, '0');
+        if (updateHash) history.replaceState(null, '', `#${index + 1}`);
+      }
+      const next = () => show(index + 1);
+      const prev = () => show(index - 1);
+      document.getElementById('next').addEventListener('click', next);
+      document.getElementById('prev').addEventListener('click', prev);
+      addEventListener('keydown', event => {
+        if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); next(); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); prev(); }
+        if (event.key === 'Home') show(0);
+        if (event.key === 'End') show(slides.length - 1);
+        if (event.key.toLowerCase() === 'f') document.documentElement.requestFullscreen?.();
+      });
+      let touchStart = 0;
+      addEventListener('touchstart', event => touchStart = event.changedTouches[0].clientX, {passive:true});
+      addEventListener('touchend', event => {
+        const delta = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(delta) > 55) delta < 0 ? next() : prev();
+      }, {passive:true});
+      addEventListener('hashchange', () => show(Number(location.hash.slice(1)) - 1, false));
+      show(index, false);
+    })();
+  </script>
+</body>
+</html>

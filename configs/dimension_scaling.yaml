@@ -1,0 +1,26 @@
+benchmark: dimension_scaling
+model: funnel
+backend: cpu
+dtype: float32
+step_size: 0.03
+max_tree_depth: 2
+predictor_beta: 0.9
+num_chains: 8
+bucket_sizes: [4]
+predictors: [history]
+
+profiles:
+  tiny:
+    seeds: [0]
+    dimensions: [4, 8]
+    num_steps: 1
+
+  full:
+    seeds: [0, 1, 2]
+    num_chains: 2048
+    dimensions: [16, 32, 64, 128, 256]
+    num_steps: 16
+    max_tree_depth: 5
+    methods: [monolithic, bucketed]
+    bucket_sizes: [128, 256, 512]
+    predictors: [none, random, history, hvp, hybrid]

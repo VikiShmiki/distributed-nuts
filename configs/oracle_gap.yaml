@@ -1,0 +1,133 @@
+benchmark: oracle_gap
+model: funnel
+backend: cpu
+dtype: float32
+step_size: 0.03
+max_tree_depth: 2
+predictor_beta: 0.9
+bucket_sizes: [2]
+scheduler_modes:
+  - monolithic
+  - unsorted
+  - random
+  - history
+  - hvp
+  - hybrid
+  - oracle_previous
+  - oracle_current
+
+profiles:
+  tiny:
+    seeds: [0]
+    num_chains: 4
+    dimension: 4
+    num_steps: 2
+
+  # T41 pre-registered gate target. Settings and thresholds were fixed in
+  # STATUS.md before this profile was run. Chosen because T40 measured a wide
+  # realized-depth spread here ({1:266, 2:128, 3:58, 4:35, 5:21, 6:4}) while
+  # staying CPU feasible, so the bucketing mechanism has something to reclaim.
+  mechanism_repair:
+    seeds: [0]
+    num_chains: 512
+    dimension: 32
+    num_steps: 8
+    max_tree_depth: 8
+    bucket_sizes: [64, 128]
+    scheduler_modes:
+      - monolithic
+      - history
+      - oracle_previous
+      - oracle_current
+
+  # T45 pre-registered GPU validation target. Settings and thresholds were fixed
+  # in STATUS.md before submission.
+  #
+  # C=2048, D=128 and bucket size 512 match the draft paper's headline case.
+  # step_size=0.03 and max_tree_depth=8 were chosen from a CPU sweep at D=128
+  # (funnel, C=256, 15 burn-in steps): mean realized depth 5.50, sd 0.60, 0%
+  # pinned at the cap, 0% divergences, oracle work ratio 0.538 and history-plan
+  # ratio 0.747 — the best combination of the five step sizes swept.
+  #
+  # Deliberately no burn-in, matching the CPU protocol exactly so the CPU and
+  # GPU numbers are directly comparable. Chains therefore start clustered, which
+  # understates heterogeneity for both backends equally.
+  gpu_validation:
+    seeds: [0]
+    num_chains: 2048
+    dimension: 128
+    num_steps: 16
+    max_tree_depth: 8
+    step_size: 0.03
+    bucket_sizes: [256, 512]
+    scheduler_modes:
+      - monolithic
+      - history
+      - oracle_previous
+      - oracle_current
+
+  # T46 diagnostic rerun. Same target as gpu_validation, but the bucket-size
+  # sweep now includes 1024 (2 buckets) and 2048 (1 bucket). The 1-bucket row is
+  # the critical internal control: one bucket IS monolithic plus gather and
+  # scatter, so it must land near 1.0x. If it does, the GPU penalty is caused by
+  # bucket COUNT (launches / occupancy) and the executor wrapper is sound. If it
+  # does not, the scan wrapper itself is structurally expensive on GPU.
+  gpu_bucket_sweep:
+    seeds: [0]
+    num_chains: 2048
+    dimension: 128
+    num_steps: 16
+    max_tree_depth: 8
+    step_size: 0.03
+    bucket_sizes: [256, 512, 1024, 2048]
+    scheduler_modes:
+      - monolithic
+      - history
+      - oracle_current
+
+  # T49: the gate target at the step size NUTS actually adapts to. The
+  # mechanism_repair profile uses step_size 0.03, which at D=32 gives mean
+  # acceptance 0.997 -- far below the 0.8 dual-averaging target, i.e. a sampler
+  # doing several times more work than a tuned one. Speedups measured there
+  # partly reclaim waste a tuned sampler never generates.
+  accept_targeted_cpu:
+    seeds: [0]
+    num_chains: 512
+    dimension: 32
+    num_steps: 16
+    max_tree_depth: 8
+    step_size: 0.2          # accept 0.867 at D=32
+    bucket_sizes: [64, 128]
+    scheduler_modes: [monolithic, history, oracle_previous, oracle_current]
+
+  # T51 predictor-quality diagnostic. Timing from this profile is secondary;
+  # its purpose is five-seed per-chain rank and straggler-tail analysis.
+  t51_predictor_diagnostics:
+    seeds: [0, 1, 2, 3, 4]
+    num_chains: 512
+    dimension: 32
+    num_steps: 16
+    max_tree_depth: 8
+    step_size: 0.2
+    bucket_sizes: [64, 128]
+    scheduler_modes: [history, oracle_previous, oracle_current]
+
+  # Same correction for the GPU target. At D=128, step_size 0.03 gives accept
+  # 0.987; 0.12 interpolates to the 0.8 target (0.10 -> 0.873, 0.15 -> 0.681).
+  gpu_accept_targeted:
+    seeds: [0]
+    num_chains: 2048
+    dimension: 128
+    num_steps: 16
+    max_tree_depth: 8
+    step_size: 0.12
+    bucket_sizes: [256, 512, 1024, 2048]
+    scheduler_modes: [monolithic, history, oracle_current]
+
+  full:
+    seeds: [0, 1, 2]
+    num_chains: 2048
+    dimension: 128
+    num_steps: 16
+    max_tree_depth: 5
+    bucket_sizes: [128, 256, 512]

@@ -1,0 +1,11 @@
+source_csv,method,rank,count,num_replicates,num_posterior_samples,is_smoke_only,evidence_note
+results/raw/sbc/tiny/rank_histogram.csv,monolithic,0,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,monolithic,1,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,monolithic,2,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,monolithic,3,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,monolithic,4,2,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,bucketed,0,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,bucketed,1,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,bucketed,2,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,bucketed,3,0,2,4,True,smoke-only; not paper evidence
+results/raw/sbc/tiny/rank_histogram.csv,bucketed,4,2,2,4,True,smoke-only; not paper evidence

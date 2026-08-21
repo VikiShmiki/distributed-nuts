@@ -1,0 +1,33 @@
+{
+  "benchmark": "gaussian_process",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "a8db72e893260decea009c7733cdc70bf00da8feb2cb0fc51583e08c1060adf8",
+  "config_path": "configs/gaussian_process.yaml",
+  "config_sha256": "65002530debea45087fae512f99ef0bc66d6f266a406594228d71e43566c2398",
+  "created_at_utc": "2026-05-25T23:09:01.572337+00:00",
+  "model_metadata": {
+    "data_seed": 37,
+    "description": "Exact one-dimensional Gaussian-process regression marginal likelihood with a squared-exponential kernel.",
+    "dimension": 3,
+    "event_shape": [
+      3
+    ],
+    "input_dimension": 1,
+    "jitter": 1e-05,
+    "kernel": "squared_exponential",
+    "model_family": "gaussian_process",
+    "name": "gaussian_process",
+    "num_observations": 8,
+    "parameterization": "log_hyperparameters"
+  },
+  "output_dir": "results/raw/gp/tiny",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 2,
+  "schema_version": 1,
+  "status": "ok"
+}

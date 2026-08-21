@@ -1,0 +1,32 @@
+{
+  "benchmark": "stochastic_volatility",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "5e2c2966bf90f55a7f96790da63c5261b3436f8a82fec02c687a6f31672fb9c8",
+  "config_path": "configs/stochastic_volatility.yaml",
+  "config_sha256": "20fa3008654f93ec3e89a8e3dd8a7d59174c19fed502ad324a1201e5c17d822b",
+  "created_at_utc": "2026-05-25T23:02:18.401112+00:00",
+  "model_metadata": {
+    "data_seed": 29,
+    "description": "Synthetic stochastic volatility benchmark with latent AR(1) log-volatility states and fixed dynamics parameters.",
+    "dimension": 6,
+    "event_shape": [
+      6
+    ],
+    "innovation_scale": 0.25,
+    "model_family": "stochastic_volatility",
+    "name": "stochastic_volatility",
+    "num_observations": 6,
+    "persistence": 0.9,
+    "time_length": 6
+  },
+  "output_dir": "results/raw/stoch_vol/tiny",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 2,
+  "schema_version": 1,
+  "status": "ok"
+}

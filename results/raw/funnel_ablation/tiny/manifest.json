@@ -1,0 +1,18 @@
+{
+  "benchmark": "funnel_ablation",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "2c3525f0cd8904218bec5f63fe0b360afd26bb494d3dbba9e0582ecd7efdd63b",
+  "config_path": "configs/funnel_ablation.yaml",
+  "config_sha256": "15a09c05c35ed3946deb5457d1976a058ad6f9870d55f375e05d645329e3cd4d",
+  "created_at_utc": "2026-05-25T16:41:56.124982+00:00",
+  "output_dir": "results/raw/funnel_ablation/tiny",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 6,
+  "schema_version": 1,
+  "status": "ok"
+}

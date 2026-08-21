@@ -1,0 +1,29 @@
+{
+  "benchmark": "eight_schools",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "2a876875d4e9b8881a5767ef6b1de6f1c0c17255f88bc5b98e93627ff9a468e4",
+  "config_path": "configs/eight_schools.yaml",
+  "config_sha256": "2b97c330e51f50bfb485e1c275490931a453b56836fc138c272f28606bce544c",
+  "created_at_utc": "2026-05-25T22:50:04.420256+00:00",
+  "model_metadata": {
+    "description": "Eight Schools hierarchical normal benchmark with an unconstrained noncentered parameterization.",
+    "dimension": 10,
+    "event_shape": [
+      10
+    ],
+    "model_family": "eight_schools",
+    "name": "eight_schools_noncentered",
+    "num_schools": 8,
+    "parameterization": "noncentered"
+  },
+  "output_dir": "results/raw/eight_schools/tiny_noncentered",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 2,
+  "schema_version": 1,
+  "status": "ok"
+}

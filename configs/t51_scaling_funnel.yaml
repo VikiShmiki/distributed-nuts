@@ -1,0 +1,17 @@
+benchmark: chain_scaling
+model: funnel
+backend: cpu
+dtype: float32
+predictor_beta: 0.9
+
+profiles:
+  preferred:
+    seeds: [0, 1, 2, 3, 4]
+    chain_counts: [128, 256, 512, 1024]
+    dimension: 4
+    num_steps: 16
+    step_size: 0.2
+    max_tree_depth: 8
+    methods: [monolithic, bucketed]
+    bucket_sizes: [64, 128]
+    predictors: [history, last_depth]

@@ -1,0 +1,39 @@
+{
+  "backend": "cpu",
+  "command": "python -m abnuts.experiments.smoke",
+  "config_hash": "ff77c5f39878eaac31a0c62114172d0a21e722e5210f3c3d6308c271f89b2c3e",
+  "config_path": "configs/smoke.yaml",
+  "config_sha256": "a3caedcb5ddb0eef7f288020051dd3e35aa5d84a6c37f03f537aa9412fa95f37",
+  "created_at_utc": "2026-05-25T11:41:53.827640+00:00",
+  "dimension": 4,
+  "model": "funnel",
+  "model_check": {
+    "initial_log_prob_max": -4.587185300236484,
+    "initial_log_prob_mean": -4.8260888276878955,
+    "initial_log_prob_min": -5.165689135364877,
+    "num_positions": 8,
+    "position_dimension": 4
+  },
+  "model_metadata": {
+    "description": "Neal's funnel with y ~ Normal(0, scale_std) and x_i | y ~ Normal(0, exp(y / 2)).",
+    "dimension": 4,
+    "event_shape": [
+      4
+    ],
+    "name": "funnel"
+  },
+  "num_chains": 8,
+  "num_draws": 4,
+  "num_warmup": 2,
+  "output_dir": "results/raw/smoke/funnel",
+  "placeholder": {
+    "checksum": 360,
+    "num_iterations": 6,
+    "total_placeholder_updates": 2160
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "schema_version": 1,
+  "seed": 0,
+  "status": "ok"
+}

@@ -1,0 +1,99 @@
+benchmark: gaussian_process
+model: gaussian_process
+backend: cpu
+dtype: float32
+step_size: 0.005
+max_tree_depth: 2
+predictor_beta: 0.9
+dimension: 3
+model_config:
+  num_observations: 8
+  data_seed: 37
+  true_amplitude: 1.0
+  true_length_scale: 0.35
+  true_noise_scale: 0.08
+  jitter: 0.00001
+bucket_sizes: [2, 4]
+predictors: [history]
+
+profiles:
+  tiny:
+    seeds: [0]
+    num_chains: 4
+    num_steps: 1
+
+  medium:
+    seeds: [0, 1, 2]
+    num_chains: 32
+    num_steps: 8
+    model_config:
+      num_observations: 32
+      data_seed: 101
+      true_amplitude: 1.0
+      true_length_scale: 0.25
+      true_noise_scale: 0.08
+      jitter: 0.00001
+    bucket_sizes: [4, 8]
+    predictors: [none, random, history]
+
+  hpc:
+    seeds: [0, 1, 2, 3, 4]
+    num_chains: 512
+    num_steps: 128
+    max_tree_depth: 5
+    model_config:
+      num_observations: 128
+      data_seed: 202
+      true_amplitude: 1.0
+      true_length_scale: 0.2
+      true_noise_scale: 0.06
+      jitter: 0.00001
+    bucket_sizes: [64, 128, 256]
+    predictors: [none, random, history]
+
+  full:
+    seeds: [0, 1, 2]
+    num_chains: 512
+    num_steps: 128
+    max_tree_depth: 5
+    methods: [monolithic, bucketed]
+    model_config:
+      num_observations: 128
+      data_seed: 202
+      true_amplitude: 1.0
+      true_length_scale: 0.2
+      true_noise_scale: 0.06
+      jitter: 0.00001
+    bucket_sizes: [64, 128, 256]
+    predictors: [none, random, history, hvp, hybrid]
+
+  # Scheduling-benchmark profiles added 2026-08-09. The pre-existing profiles
+  # use step sizes tuned for max_tree_depth 2-5; run at depth 8 they pin every
+  # chain at the cap, which erases the work heterogeneity a bucketing scheduler
+  # exists to exploit and would read as a scientific negative.
+  #
+  # Step sizes below were chosen by CPU sweep (C=256, 20 burn-in + 8 steps,
+  # max_tree_depth=8, bucket width 32) on the ORACLE WORK RATIO, which measures
+  # reclaimable work directly. Depth standard deviation was deliberately not
+  # used: a bucket costs its slowest member, so what matters is the tail, not
+  # the spread.
+  scheduling:
+    # accept 0.727, depth 3.03, 0% pinned, 1.4% div (accept-targeted, T48)
+    seeds: [0]
+    num_chains: 512
+    num_steps: 16
+    step_size: 0.2
+    max_tree_depth: 8
+    methods: [monolithic, bucketed]
+    bucket_sizes: [64, 128]
+    predictors: [none, history]
+
+  t51_preferred:
+    seeds: [0, 1, 2, 3, 4]
+    num_chains: 512
+    num_steps: 16
+    step_size: 0.2
+    max_tree_depth: 8
+    methods: [monolithic, bucketed]
+    bucket_sizes: [64, 128]
+    predictors: [none, history, last_depth]

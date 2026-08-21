@@ -1,0 +1,8 @@
+scheduler_mode,scheduler_label,bucket_size,is_analysis_upper_bound,step,bucket_index,padding_count,fill_fraction,bucket_realized_max
+unsorted,unsorted,2,False,0,1,0,1,2
+random,random,2,False,0,2,0,1,2
+history,history,2,False,0,3,0,1,2
+hvp,hvp,2,False,0,4,0,1,2
+hybrid,hybrid,2,False,0,5,0,1,2
+oracle_previous,oracle_previous,2,False,0,6,0,1,2
+oracle_current,oracle_current (analysis-only upper bound),2,True,0,7,0,1,2

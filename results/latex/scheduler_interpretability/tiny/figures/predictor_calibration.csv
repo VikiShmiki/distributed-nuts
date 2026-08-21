@@ -1,0 +1,8 @@
+scheduler_mode,scheduler_label,bucket_size,is_analysis_upper_bound,predicted_work,realized_work,abs_error,is_summary_proxy
+unsorted,unsorted,2,False,1.625,2,0.375,True
+random,random,2,False,1.237845,2,0.76215501,True
+history,history,2,False,1.6375,2,0.3625,True
+hvp,hvp,2,False,1.4068173,2,0.59318268,True
+hybrid,hybrid,2,False,1.4068173,2,0.59318268,True
+oracle_previous,oracle_previous,2,False,1.75,2,0.25,True
+oracle_current,oracle_current (analysis-only upper bound),2,True,2,2,0,True

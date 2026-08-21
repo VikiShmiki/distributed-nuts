@@ -1,0 +1,11 @@
+method,rank,count,num_replicates,num_posterior_samples,is_smoke_only,evidence_note
+monolithic,0,0,2,4,True,smoke-only; not paper evidence
+monolithic,1,0,2,4,True,smoke-only; not paper evidence
+monolithic,2,0,2,4,True,smoke-only; not paper evidence
+monolithic,3,0,2,4,True,smoke-only; not paper evidence
+monolithic,4,2,2,4,True,smoke-only; not paper evidence
+bucketed,0,0,2,4,True,smoke-only; not paper evidence
+bucketed,1,0,2,4,True,smoke-only; not paper evidence
+bucketed,2,0,2,4,True,smoke-only; not paper evidence
+bucketed,3,0,2,4,True,smoke-only; not paper evidence
+bucketed,4,2,2,4,True,smoke-only; not paper evidence

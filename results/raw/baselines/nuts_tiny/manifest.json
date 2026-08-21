@@ -1,0 +1,26 @@
+{
+  "benchmark": "funnel_ablation",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "5018db3127caa71b0ead8373d317591c2c539cc98c89b9db6156a529a2708a8b",
+  "config_path": "configs/funnel_ablation.yaml",
+  "config_sha256": "797b573890dadfeedd9bde7acaf7994eb13970357e806909b88dd65bffd7161e",
+  "created_at_utc": "2026-05-25T23:15:58.902742+00:00",
+  "model_metadata": {
+    "description": "Neal's funnel with y ~ Normal(0, scale_std) and x_i | y ~ Normal(0, exp(y / 2)).",
+    "dimension": 4,
+    "event_shape": [
+      4
+    ],
+    "name": "funnel"
+  },
+  "output_dir": "results/raw/baselines/nuts_tiny",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "tiny",
+  "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]",
+  "row_count": 7,
+  "schema_version": 1,
+  "status": "ok"
+}

@@ -1,0 +1,36 @@
+{
+  "benchmark": "stochastic_volatility",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "1c1c3f0dde2ad020332bb939c3420a16ac9f6a2618a6a70fdb4df7f7f5b2543d",
+  "config_path": "configs/stochastic_volatility.yaml",
+  "config_sha256": "8ce80166a40d3c1d0f00dc5a5f6f67d802f44edde44bce71ea646a2c9f1134dd",
+  "created_at_utc": "2026-08-09T15:18:54.995548+00:00",
+  "model_metadata": {
+    "data_seed": 29,
+    "description": "Synthetic stochastic volatility benchmark with latent AR(1) log-volatility states and fixed dynamics parameters.",
+    "dimension": 6,
+    "event_shape": [
+      6
+    ],
+    "innovation_scale": 0.25,
+    "model_family": "stochastic_volatility",
+    "name": "stochastic_volatility",
+    "num_observations": 6,
+    "persistence": 0.9,
+    "time_length": 6
+  },
+  "output_dir": "results/raw/broad_sweep_standard_nuts/stochastic_volatility",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "scheduling",
+  "profiler_markers_enabled": false,
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 5,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": true,
+  "warm_repeats": 3,
+  "warm_timing_summary": "min of warm_repeats blocked repeats"
+}

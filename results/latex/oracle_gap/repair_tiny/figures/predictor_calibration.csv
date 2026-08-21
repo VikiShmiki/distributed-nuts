@@ -1,0 +1,57 @@
+scheduler_mode,scheduler_label,bucket_size,is_analysis_upper_bound,predicted_work,realized_work,abs_error,is_summary_proxy
+unsorted,unsorted,2,False,1,2,1,False
+unsorted,unsorted,2,False,1,1,0,False
+unsorted,unsorted,2,False,1,1,0,False
+unsorted,unsorted,2,False,1,1,0,False
+unsorted,unsorted,2,False,1,2,1,False
+unsorted,unsorted,2,False,1,1,0,False
+unsorted,unsorted,2,False,1,1,0,False
+unsorted,unsorted,2,False,1,2,1,False
+random,random,2,False,0.87241435,2,1.1275856,False
+random,random,2,False,0.44302094,1,0.55697906,False
+random,random,2,False,0.27708054,1,0.72291946,False
+random,random,2,False,0.78659499,1,0.21340501,False
+random,random,2,False,0.47365999,2,1.52634,False
+random,random,2,False,0.78604746,1,0.21395254,False
+random,random,2,False,0.88060236,1,0.11939764,False
+random,random,2,False,0.38333929,2,1.6166607,False
+history,history,2,False,1,2,1,False
+history,history,2,False,1,1,0,False
+history,history,2,False,1,1,0,False
+history,history,2,False,1,1,0,False
+history,history,2,False,1.1,2,0.89999998,False
+history,history,2,False,1,1,0,False
+history,history,2,False,1,1,0,False
+history,history,2,False,1,2,1,False
+hvp,hvp,2,False,1.6465044,2,0.3534956,False
+hvp,hvp,2,False,1.7430696,1,0.74306965,False
+hvp,hvp,2,False,1.7504609,1,0.75046086,False
+hvp,hvp,2,False,1.7026856,1,0.70268559,False
+hvp,hvp,2,False,1.5950952,2,0.40490484,False
+hvp,hvp,2,False,1.7430696,1,0.74306965,False
+hvp,hvp,2,False,1.7504609,1,0.75046086,False
+hvp,hvp,2,False,1.7026856,2,0.29731441,False
+hybrid,hybrid,2,False,1.6465044,2,0.3534956,False
+hybrid,hybrid,2,False,1.7430696,1,0.74306965,False
+hybrid,hybrid,2,False,1.7504609,1,0.75046086,False
+hybrid,hybrid,2,False,1.7026856,1,0.70268559,False
+hybrid,hybrid,2,False,1.5950952,2,0.40490484,False
+hybrid,hybrid,2,False,1.7430696,1,0.74306965,False
+hybrid,hybrid,2,False,1.7504609,1,0.75046086,False
+hybrid,hybrid,2,False,1.7026856,2,0.29731441,False
+oracle_previous,oracle_previous,2,False,1,2,1,False
+oracle_previous,oracle_previous,2,False,1,1,0,False
+oracle_previous,oracle_previous,2,False,1,1,0,False
+oracle_previous,oracle_previous,2,False,1,1,0,False
+oracle_previous,oracle_previous,2,False,2,2,0,False
+oracle_previous,oracle_previous,2,False,1,1,0,False
+oracle_previous,oracle_previous,2,False,1,1,0,False
+oracle_previous,oracle_previous,2,False,1,2,1,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,2,2,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,2,2,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,1,1,0,False
+oracle_current,oracle_current (analysis-only upper bound),2,True,2,2,0,False

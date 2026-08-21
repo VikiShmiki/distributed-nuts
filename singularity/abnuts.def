@@ -1,0 +1,43 @@
+Bootstrap: docker
+From: python:3.11-slim
+
+%labels
+    Author Asynchronous Bucketed NUTS contributors
+    Description CPU/GPU-ready scaffold for the abnuts research package
+
+%files
+    pyproject.toml /opt/abnuts/pyproject.toml
+    README.md /opt/abnuts/README.md
+    src /opt/abnuts/src
+    configs /opt/abnuts/configs
+
+%post
+    set -e
+    apt-get update
+    apt-get install -y --no-install-recommends libstdc++6
+    rm -rf /var/lib/apt/lists/*
+    python -m pip install --no-cache-dir --upgrade pip
+    cd /opt/abnuts
+    python -m pip install --no-cache-dir .
+    python -m pip install --no-cache-dir --upgrade "jax[cuda12]>=0.4.34,<0.5"
+
+%environment
+    export PYTHONUNBUFFERED=1
+    export TOKENIZERS_PARALLELISM=false
+    export XLA_PYTHON_CLIENT_PREALLOCATE=false
+    export OMP_NUM_THREADS=${OMP_NUM_THREADS:-1}
+    export MKL_NUM_THREADS=${MKL_NUM_THREADS:-1}
+    export OPENBLAS_NUM_THREADS=${OPENBLAS_NUM_THREADS:-1}
+    export NUMEXPR_NUM_THREADS=${NUMEXPR_NUM_THREADS:-1}
+
+%runscript
+    exec python -m abnuts.experiments.smoke "$@"
+
+%test
+    python - <<'PY'
+import abnuts
+import jax
+
+print(f"abnuts import ok: {abnuts.__version__}")
+print(f"jax import ok: {jax.__version__}")
+PY

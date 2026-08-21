@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrr}
+\toprule
+Model & Chains & Median speedup & 95\% CI & Policy/width \\
+\midrule
+funnel & 128 & 0.915 & [0.833, 1.035] & history/64 \\
+funnel & 256 & 0.901 & [0.779, 0.953] & history/128 \\
+funnel & 512 & 1.008 & [0.875, 1.056] & history/64 \\
+funnel & 1024 & 1.403 & [1.214, 1.495] & history/128 \\
+gaussian\_process & 128 & 0.935 & [0.873, 0.957] & last-depth/64 \\
+gaussian\_process & 256 & 0.976 & [0.945, 1.003] & last-depth/64 \\
+gaussian\_process & 512 & 1.054 & [1.025, 1.130] & last-depth/128 \\
+gaussian\_process & 1024 & 1.153 & [1.092, 1.206] & last-depth/128 \\
+\bottomrule
+\end{tabular}

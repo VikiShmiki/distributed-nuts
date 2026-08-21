@@ -1,0 +1,9 @@
+benchmark,model,seed,scheduler_mode,scheduler_label,is_analysis_upper_bound,bucket_size,num_chains,dimension,num_steps,step_size,max_tree_depth,predictor_beta,t_mono,t_mode,speedup,padding_ratio,padding_count,mean_predictor_abs_error,mean_bucket_realized_max,mean_sum_bucket_realized_max,mean_global_realized_max,bucket_max_over_global_max,total_leapfrog_count,divergence_count,max_realized_tree_depth,hvp_overhead_seconds,hvp_call_count
+oracle_gap,funnel,0,monolithic,monolithic,False,0,4,4,2,0.03,2,0.9,4.2615610137581825,4.2615610137581825,1.0,0.0,0,0.0,2.0,2.0,2.0,1.0,14,0,2,0.0,0
+oracle_gap,funnel,0,unsorted,unsorted,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,5.482524909079075,0.7772989789250254,0.0,0,0.375,1.75,3.5,2.0,1.75,14,0,2,0.0,0
+oracle_gap,funnel,0,random,random,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,1.3237265571951866,3.2193665607101702,0.0,0,0.7621550112962723,1.5,3.0,2.0,1.5,14,0,2,0.0,0
+oracle_gap,funnel,0,history,history,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,1.1976984813809395,3.5581250874131753,0.0,0,0.36249999701976776,1.5,3.0,2.0,1.5,14,0,2,0.0,0
+oracle_gap,funnel,0,hvp,hvp,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,2.0928869992494583,2.036211709130232,0.0,0,0.5931826829910278,1.5,3.0,2.0,1.5,14,0,2,0.7994066923856735,2
+oracle_gap,funnel,0,hybrid,hybrid,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,1.4419350326061249,2.9554459232854073,0.0,0,0.5931826829910278,1.5,3.0,2.0,1.5,14,0,2,0.07918039709329605,2
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,4,4,2,0.03,2,0.9,4.2615610137581825,1.322728157043457,3.2217965506106427,0.0,0,0.25,1.5,3.0,2.0,1.5,14,0,2,0.0,0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,4,4,2,0.03,2,0.9,4.2615610137581825,1.2757521271705627,3.3404302630556613,0.0,0,0.0,1.5,3.0,2.0,1.5,14,0,2,0.0,0

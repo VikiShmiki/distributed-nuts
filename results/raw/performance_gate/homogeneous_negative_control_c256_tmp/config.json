@@ -1,0 +1,13 @@
+{
+  "backend": "cpu",
+  "bucket_size": 256,
+  "dimension": 128,
+  "dtype": "float32",
+  "max_tree_depth": 5,
+  "model": "funnel",
+  "num_chains": 256,
+  "num_steps": 8,
+  "predictor": "none",
+  "seed": 0,
+  "step_size": 0.03
+}

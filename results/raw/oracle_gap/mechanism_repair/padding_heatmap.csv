@@ -1,0 +1,289 @@
+benchmark,model,seed,scheduler_mode,scheduler_label,is_analysis_upper_bound,bucket_size,step,bucket_index,bucket_capacity,occupancy,padding_count,fill_fraction,bucket_min_predicted_work,bucket_max_predicted_work,bucket_realized_max,global_realized_max
+oracle_gap,funnel,0,history,history,False,64,0,0,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,1,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,2,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,3,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,4,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,5,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,6,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,0,7,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,1,0,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,2,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,3,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,4,64,64,0,1.0,1.0,1.100000023841858,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,5,64,64,0,1.0,1.100000023841858,1.100000023841858,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,6,64,64,0,1.0,1.100000023841858,1.2000000476837158,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,1,7,64,64,0,1.0,1.2000000476837158,1.4000000953674316,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,2,64,64,0,1.0,1.0,1.090000033378601,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,3,64,64,0,1.0,1.090000033378601,1.1800000667572021,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,4,64,64,0,1.0,1.1800000667572021,1.2000000476837158,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,5,64,64,0,1.0,1.2000000476837158,1.290000081062317,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,6,64,64,0,1.0,1.290000081062317,1.3900001049041748,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,2,7,64,64,0,1.0,1.3900001049041748,1.760000228881836,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,1,64,64,0,1.0,1.0,1.100000023841858,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,2,64,64,0,1.0,1.100000023841858,1.1800000667572021,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,3,64,64,0,1.0,1.1800000667572021,1.2430000305175781,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,4,64,64,0,1.0,1.252000093460083,1.3000000715255737,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,5,64,64,0,1.0,1.3000000715255737,1.380000114440918,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,6,64,64,0,1.0,1.38100004196167,1.4800001382827759,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,3,7,64,64,0,1.0,1.4800001382827759,2.003000259399414,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,0,64,64,0,1.0,1.0,1.090000033378601,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,1,64,64,0,1.0,1.090000033378601,1.1628999710083008,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,2,64,64,0,1.0,1.1628999710083008,1.23580002784729,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,3,64,64,0,1.0,1.23580002784729,1.2916001081466675,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,4,64,64,0,1.0,1.2916001081466675,1.3726000785827637,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,5,64,64,0,1.0,1.3726000785827637,1.4529001712799072,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,6,64,64,0,1.0,1.4539000988006592,1.5716001987457275,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,4,7,64,64,0,1.0,1.5800001621246338,2.129800319671631,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,0,64,64,0,1.0,1.0,1.145799994468689,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,1,64,64,0,1.0,1.1466100215911865,1.238510012626648,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,2,64,64,0,1.0,1.238510012626648,1.307800054550171,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,3,64,64,0,1.0,1.3086100816726685,1.3629000186920166,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,4,64,64,0,1.0,1.3629000186920166,1.4390201568603516,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,5,64,64,0,1.0,1.4390201568603516,1.5326300859451294,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,6,64,64,0,1.0,1.5329002141952515,1.6455000638961792,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,5,7,64,64,0,1.0,1.6498000621795654,2.3168203830718994,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,0,64,64,0,1.0,1.0,1.1710000038146973,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,1,64,64,0,1.0,1.1710000038146973,1.2802690267562866,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,2,64,64,0,1.0,1.2809981107711792,1.3439000844955444,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,3,64,64,0,1.0,1.344169020652771,1.4326300621032715,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,4,64,64,0,1.0,1.4330260753631592,1.4859281778335571,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,5,64,64,0,1.0,1.4869000911712646,1.589698076248169,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,6,64,64,0,1.0,1.590096116065979,1.7210981845855713,6.0,6.0
+oracle_gap,funnel,0,history,history,False,64,6,7,64,64,0,1.0,1.7229981422424316,2.324489116668701,5.0,6.0
+oracle_gap,funnel,0,history,history,False,64,7,0,64,64,0,1.0,1.0,1.2246589660644531,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,1,64,64,0,1.0,1.2260441780090332,1.3184813261032104,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,2,64,64,0,1.0,1.3200491666793823,1.3893400430679321,4.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,3,64,64,0,1.0,1.3893671035766602,1.4743642807006836,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,4,64,64,0,1.0,1.474576473236084,1.5437424182891846,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,5,64,64,0,1.0,1.5455541610717773,1.6436541080474854,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,6,64,64,0,1.0,1.6447042226791382,1.8032162189483643,5.0,5.0
+oracle_gap,funnel,0,history,history,False,64,7,7,64,64,0,1.0,1.8068002462387085,2.3566246032714844,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,0,0,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,0,1,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,0,2,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,0,3,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,1,0,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,1,1,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,1,2,128,128,0,1.0,1.0,1.100000023841858,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,1,3,128,128,0,1.0,1.100000023841858,1.4000000953674316,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,2,0,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,2,1,128,128,0,1.0,1.0,1.1800000667572021,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,2,2,128,128,0,1.0,1.1800000667572021,1.290000081062317,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,2,3,128,128,0,1.0,1.290000081062317,1.760000228881836,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,3,0,128,128,0,1.0,1.0,1.100000023841858,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,3,1,128,128,0,1.0,1.100000023841858,1.2430000305175781,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,3,2,128,128,0,1.0,1.252000093460083,1.380000114440918,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,3,3,128,128,0,1.0,1.38100004196167,2.003000259399414,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,4,0,128,128,0,1.0,1.0,1.1628999710083008,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,4,1,128,128,0,1.0,1.1628999710083008,1.2916001081466675,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,4,2,128,128,0,1.0,1.2916001081466675,1.4529001712799072,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,4,3,128,128,0,1.0,1.4539000988006592,2.129800319671631,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,5,0,128,128,0,1.0,1.0,1.238510012626648,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,5,1,128,128,0,1.0,1.238510012626648,1.3629000186920166,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,5,2,128,128,0,1.0,1.3629000186920166,1.5326300859451294,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,5,3,128,128,0,1.0,1.5329002141952515,2.3168203830718994,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,6,0,128,128,0,1.0,1.0,1.2802690267562866,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,6,1,128,128,0,1.0,1.2809981107711792,1.4326300621032715,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,6,2,128,128,0,1.0,1.4330260753631592,1.589698076248169,5.0,6.0
+oracle_gap,funnel,0,history,history,False,128,6,3,128,128,0,1.0,1.590096116065979,2.324489116668701,6.0,6.0
+oracle_gap,funnel,0,history,history,False,128,7,0,128,128,0,1.0,1.0,1.3184813261032104,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,7,1,128,128,0,1.0,1.3200491666793823,1.4743642807006836,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,7,2,128,128,0,1.0,1.474576473236084,1.6436541080474854,5.0,5.0
+oracle_gap,funnel,0,history,history,False,128,7,3,128,128,0,1.0,1.6447042226791382,2.3566246032714844,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,0,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,1,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,2,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,3,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,4,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,5,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,6,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,0,7,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,0,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,2,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,3,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,4,64,64,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,5,64,64,0,1.0,2.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,6,64,64,0,1.0,2.0,3.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,1,7,64,64,0,1.0,3.0,5.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,2,64,64,0,1.0,1.0,1.0,4.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,3,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,4,64,64,0,1.0,1.0,2.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,5,64,64,0,1.0,2.0,3.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,6,64,64,0,1.0,3.0,4.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,2,7,64,64,0,1.0,4.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,1,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,2,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,3,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,4,64,64,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,5,64,64,0,1.0,2.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,6,64,64,0,1.0,2.0,4.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,3,7,64,64,0,1.0,4.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,2,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,3,64,64,0,1.0,1.0,1.0,4.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,4,64,64,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,5,64,64,0,1.0,2.0,3.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,6,64,64,0,1.0,3.0,4.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,4,7,64,64,0,1.0,4.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,0,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,1,64,64,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,2,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,3,64,64,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,4,64,64,0,1.0,2.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,5,64,64,0,1.0,2.0,3.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,6,64,64,0,1.0,3.0,4.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,5,7,64,64,0,1.0,4.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,0,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,1,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,2,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,3,64,64,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,4,64,64,0,1.0,1.0,2.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,5,64,64,0,1.0,2.0,3.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,6,64,64,0,1.0,3.0,3.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,6,7,64,64,0,1.0,3.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,0,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,1,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,2,64,64,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,3,64,64,0,1.0,1.0,2.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,4,64,64,0,1.0,2.0,2.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,5,64,64,0,1.0,2.0,2.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,6,64,64,0,1.0,3.0,3.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,64,7,7,64,64,0,1.0,3.0,6.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,0,0,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,0,1,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,0,2,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,0,3,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,1,0,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,1,1,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,1,2,128,128,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,1,3,128,128,0,1.0,2.0,5.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,2,0,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,2,1,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,2,2,128,128,0,1.0,1.0,3.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,2,3,128,128,0,1.0,3.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,3,0,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,3,1,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,3,2,128,128,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,3,3,128,128,0,1.0,2.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,4,0,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,4,1,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,4,2,128,128,0,1.0,1.0,3.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,4,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,5,0,128,128,0,1.0,1.0,1.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,5,1,128,128,0,1.0,1.0,2.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,5,2,128,128,0,1.0,2.0,3.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,5,3,128,128,0,1.0,3.0,6.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,6,0,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,6,1,128,128,0,1.0,1.0,1.0,5.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,6,2,128,128,0,1.0,1.0,3.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,6,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,7,0,128,128,0,1.0,1.0,1.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,7,1,128,128,0,1.0,1.0,2.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,7,2,128,128,0,1.0,2.0,2.0,5.0,5.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,128,7,3,128,128,0,1.0,3.0,6.0,5.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,0,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,1,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,2,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,3,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,4,64,64,0,1.0,1.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,5,64,64,0,1.0,2.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,6,64,64,0,1.0,2.0,3.0,3.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,0,7,64,64,0,1.0,3.0,5.0,5.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,3,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,4,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,5,64,64,0,1.0,2.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,6,64,64,0,1.0,3.0,4.0,4.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,1,7,64,64,0,1.0,4.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,3,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,4,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,5,64,64,0,1.0,2.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,6,64,64,0,1.0,2.0,4.0,4.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,2,7,64,64,0,1.0,4.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,3,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,4,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,5,64,64,0,1.0,2.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,6,64,64,0,1.0,3.0,4.0,4.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,3,7,64,64,0,1.0,4.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,3,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,4,64,64,0,1.0,2.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,5,64,64,0,1.0,2.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,6,64,64,0,1.0,3.0,4.0,4.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,4,7,64,64,0,1.0,4.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,3,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,4,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,5,64,64,0,1.0,2.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,6,64,64,0,1.0,3.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,5,7,64,64,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,0,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,1,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,2,64,64,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,3,64,64,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,4,64,64,0,1.0,2.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,5,64,64,0,1.0,2.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,6,64,64,0,1.0,3.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,6,7,64,64,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,0,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,1,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,2,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,3,64,64,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,4,64,64,0,1.0,1.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,5,64,64,0,1.0,2.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,6,64,64,0,1.0,2.0,3.0,3.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,64,7,7,64,64,0,1.0,3.0,5.0,5.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,0,0,128,128,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,0,1,128,128,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,0,2,128,128,0,1.0,1.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,0,3,128,128,0,1.0,2.0,5.0,5.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,1,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,1,1,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,1,2,128,128,0,1.0,1.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,1,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,2,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,2,1,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,2,2,128,128,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,2,3,128,128,0,1.0,2.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,3,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,3,1,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,3,2,128,128,0,1.0,1.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,3,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,4,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,4,1,128,128,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,4,2,128,128,0,1.0,2.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,4,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,5,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,5,1,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,5,2,128,128,0,1.0,1.0,3.0,3.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,5,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,6,0,128,128,0,1.0,1.0,1.0,1.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,6,1,128,128,0,1.0,1.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,6,2,128,128,0,1.0,2.0,2.0,2.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,6,3,128,128,0,1.0,3.0,6.0,6.0,6.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,7,0,128,128,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,7,1,128,128,0,1.0,1.0,1.0,1.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,7,2,128,128,0,1.0,1.0,2.0,2.0,5.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,128,7,3,128,128,0,1.0,2.0,5.0,5.0,5.0

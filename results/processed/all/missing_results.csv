@@ -1,0 +1,8 @@
+key,title,expected,note
+funnel_ablation_paper_scale,Funnel bucket ablation paper-scale run,results/raw/funnel_ablation/<paper-run>/summary.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+chain_scaling_paper_scale,Chain scaling paper-scale run,results/raw/chain_scaling/<paper-run>/summary.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+dimension_scaling_paper_scale,Dimension scaling paper-scale run,results/raw/dimension_scaling/<paper-run>/summary.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+oracle_gap_paper_scale,Oracle-gap decomposition paper-scale run,results/raw/oracle_gap/<paper-run>/summary.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+diagnostics_paper_scale,Long-trace diagnostics paper-scale run,results/raw/long_trace/<paper-run>/diagnostics.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+sbc_paper_scale,Simulation-based calibration paper-scale run,results/raw/sbc/<paper-run>/rank_histogram.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.
+profiling_paper_scale,Runtime breakdown paper-scale run,results/raw/profiling/<paper-run>/summary.csv,TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.

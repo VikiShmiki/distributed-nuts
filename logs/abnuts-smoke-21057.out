@@ -1,0 +1,54 @@
+SLURM job id: 21057
+Host: gpgpu02.hpc.local
+Project root: /home/hpc/users/viktor.najdovski/distributed-nuts
+Run root: /home/hpc/users/viktor.najdovski/abnuts_runs/gpu_validation_20260526_152933
+Image: /home/hpc/users/viktor.najdovski/distributed-nuts/images/abnuts.sif
+Validating JAX GPU visibility, then running the smoke manifest command.
+Tue May 26 15:29:33 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.05              Driver Version: 560.35.05      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:01:00.0 Off |                    0 |
+| N/A   35C    P0             55W /  500W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Enabled* |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          Off |   00000000:41:00.0 Off |                    0 |
+| N/A   32C    P0             54W /  500W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Enabled* |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          Off |   00000000:81:00.0 Off |                   On |
+| N/A   38C    P0             88W /  500W |       1MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          Off |   00000000:C1:00.0 Off |                   On |
+| N/A   36C    P0             87W /  500W |   77970MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  2    0   0   0  |               1MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 1MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+|  3    0   0   0  |           77970MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 5MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    3    0    0      68030      C   VLLM::EngineCore                            77966MiB |
++-----------------------------------------------------------------------------------------+
+JAX GPU validation ok: backend=gpu, devices=[CudaDevice(id=0)]
+Wrote smoke manifest: /runs/smoke_gpu/manifest.json

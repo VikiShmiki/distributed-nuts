@@ -1,0 +1,25 @@
+{
+  "analysis_upper_bound_modes": [
+    "oracle_current"
+  ],
+  "benchmark": "oracle_gap",
+  "command": "python -m abnuts.experiments.run_oracle_gap",
+  "config_hash": "a220a5e9f3947b3648516cbcba0b26099e808c8d26e638f6ac21f5d83cadf5a9",
+  "config_path": "configs/oracle_gap.yaml",
+  "config_sha256": "3d4b105ee8ddd7ece33a205f376b3ad7367418c93c08219f96b824e091abc651",
+  "created_at_utc": "2026-08-21T02:02:25.566897+00:00",
+  "output_dir": "results/raw/t51_preferred/predictor_diagnostics",
+  "outputs": {
+    "padding_heatmap_csv": "padding_heatmap.csv",
+    "predictor_calibration_csv": "predictor_calibration.csv",
+    "speedup_heterogeneity_csv": "speedup_heterogeneity.csv",
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "t51_predictor_diagnostics",
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 30,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": true
+}

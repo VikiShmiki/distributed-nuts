@@ -1,0 +1,7 @@
+model,seed,predictor,bucket_size,num_chains,dimension,num_steps,step_size,max_tree_depth,predictor_beta,t_mono,t_bucket,speedup,mono_total_leapfrog_count,mono_divergence_count,mono_max_realized_tree_depth,bucket_total_leapfrog_count,bucket_divergence_count,bucket_max_realized_tree_depth,bucket_num_buckets,bucket_padding_count,bucket_padding_ratio,bucket_hvp_overhead_seconds,bucket_hvp_call_count
+funnel,0,history,2,4,4,1,0.03,2,0.9,4.444004341959953,5.336968652904034,0.8326832385537459,6,0,2,6,0,2,2,0,0.0,0.0,0
+funnel,0,history,4,4,4,1,0.03,2,0.9,4.444004341959953,1.0323119387030602,4.304904530643282,6,0,2,6,0,2,1,0,0.0,0.0,0
+funnel,0,hvp,2,4,4,1,0.03,2,0.9,4.444004341959953,1.4794758409261703,3.003769456064893,6,0,2,6,0,2,2,0,0.0,0.8338822051882744,1
+funnel,0,hvp,4,4,4,1,0.03,2,0.9,4.444004341959953,0.37845948338508606,11.742351657332199,6,0,2,6,0,2,1,0,0.0,0.03780445456504822,1
+funnel,0,hybrid,2,4,4,1,0.03,2,0.9,4.444004341959953,0.7259035706520081,6.122031247164606,6,0,2,6,0,2,2,0,0.0,0.03777503967285156,1
+funnel,0,hybrid,4,4,4,1,0.03,2,0.9,4.444004341959953,0.4082437828183174,10.88566324582018,6,0,2,6,0,2,1,0,0.0,0.03927808254957199,1

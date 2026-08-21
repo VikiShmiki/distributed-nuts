@@ -1,0 +1,30 @@
+{
+  "benchmark": "funnel_ablation",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "7000794e98999fb847dade43baf7c78fa27ea41332092ba241bb57782d3928b6",
+  "config_path": "configs/funnel_ablation.yaml",
+  "config_sha256": "45bb782421e4b5ad0323e53d280a2ab6d341da37e01f60b79ee04098f819ae96",
+  "created_at_utc": "2026-08-09T15:11:28.396502+00:00",
+  "model_metadata": {
+    "description": "Neal's funnel with y ~ Normal(0, scale_std) and x_i | y ~ Normal(0, exp(y / 2)).",
+    "dimension": 4,
+    "event_shape": [
+      4
+    ],
+    "name": "funnel"
+  },
+  "output_dir": "results/raw/broad_sweep_standard_nuts/funnel",
+  "outputs": {
+    "summary_csv": "summary.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "scheduling",
+  "profiler_markers_enabled": false,
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 5,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": true,
+  "warm_repeats": 3,
+  "warm_timing_summary": "min of warm_repeats blocked repeats"
+}

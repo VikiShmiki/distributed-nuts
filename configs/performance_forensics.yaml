@@ -1,0 +1,65 @@
+# Performance forensics profiling config — T32/T33/T34.
+#
+# Purpose: Reproduce and localize the Python dispatch-loop slowdown observed
+# in HPC run 21070. Use --enable-timing-breakdown to capture cold/warm
+# and per-component (gather/executor/scatter) timings.
+#
+# C in {128, 512, 2048} — chain counts spanning run-21070 range.
+# S in {128, 512}       — two num_steps depths to confirm scaling holds.
+#
+# IMPORTANT: chain_counts=[512, 2048] requires a GPU; CPU runs are feasible
+# for chain_counts=[128] only. Use --backend gpu for larger configs.
+#
+# Canonical run command (CPU, tiny_s128):
+#   python -m abnuts.experiments.run_benchmark \
+#       --config configs/performance_forensics.yaml \
+#       --profile tiny_s128 --backend cpu \
+#       --enable-timing-breakdown \
+#       --out results/raw/performance_forensics/tiny_s128
+#
+# For GPU (forensics_s128 or forensics_s512 profiles):
+#   python -m abnuts.experiments.run_benchmark \
+#       --config configs/performance_forensics.yaml \
+#       --profile forensics_s128 --backend gpu \
+#       --enable-timing-breakdown \
+#       --out results/raw/performance_forensics/forensics_s128
+
+benchmark: performance_forensics
+model: funnel
+methods: [monolithic, bucketed]
+backend: cpu
+dtype: float32
+step_size: 0.03
+max_tree_depth: 5
+predictor_beta: 0.9
+
+profiles:
+  # CPU-runnable profile: single small chain count, 8 steps.
+  # Use to check that the dispatch-loop overhead is reproducible locally.
+  tiny_cpu:
+    seeds: [0]
+    chain_counts: [128]
+    dimensions: [128]
+    num_steps: 8
+    bucket_sizes: [128, 512]
+    predictors: [none, history]
+
+  # S=128 steps across C in {128, 512, 2048}.
+  # Requires GPU for C >= 512.
+  forensics_s128:
+    seeds: [0]
+    chain_counts: [128, 512, 2048]
+    dimensions: [128]
+    num_steps: 128
+    bucket_sizes: [128, 512]
+    predictors: [none, history]
+
+  # S=512 steps across C in {128, 512, 2048}.
+  # Requires GPU for C >= 512. Longer run gives more stable warm timing.
+  forensics_s512:
+    seeds: [0]
+    chain_counts: [128, 512, 2048]
+    dimensions: [128]
+    num_steps: 512
+    bucket_sizes: [128, 512]
+    predictors: [none, history]

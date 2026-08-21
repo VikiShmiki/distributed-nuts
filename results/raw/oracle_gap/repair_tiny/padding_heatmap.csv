@@ -1,0 +1,29 @@
+benchmark,model,seed,scheduler_mode,scheduler_label,is_analysis_upper_bound,bucket_size,step,bucket_index,bucket_capacity,occupancy,padding_count,fill_fraction,bucket_min_predicted_work,bucket_max_predicted_work,bucket_realized_max,global_realized_max
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,0,2,2,0,1.0,1.0,1.0,2.0,2.0
+oracle_gap,funnel,0,unsorted,unsorted,False,2,0,1,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,0,2,2,0,1.0,1.0,1.0,2.0,2.0
+oracle_gap,funnel,0,unsorted,unsorted,False,2,1,1,2,2,0,1.0,1.0,1.0,2.0,2.0
+oracle_gap,funnel,0,random,random,False,2,0,0,2,2,0,1.0,0.2770805358886719,0.44302093982696533,1.0,2.0
+oracle_gap,funnel,0,random,random,False,2,0,1,2,2,0,1.0,0.7865949869155884,0.8724143505096436,2.0,2.0
+oracle_gap,funnel,0,random,random,False,2,1,0,2,2,0,1.0,0.3833392858505249,0.4736599922180176,2.0,2.0
+oracle_gap,funnel,0,random,random,False,2,1,1,2,2,0,1.0,0.7860474586486816,0.8806023597717285,1.0,2.0
+oracle_gap,funnel,0,history,history,False,2,0,0,2,2,0,1.0,1.0,1.0,2.0,2.0
+oracle_gap,funnel,0,history,history,False,2,0,1,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,history,history,False,2,1,0,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,history,history,False,2,1,1,2,2,0,1.0,1.0,1.100000023841858,2.0,2.0
+oracle_gap,funnel,0,hvp,hvp,False,2,0,0,2,2,0,1.0,1.6465044021606445,1.7026855945587158,2.0,2.0
+oracle_gap,funnel,0,hvp,hvp,False,2,0,1,2,2,0,1.0,1.7430696487426758,1.7504608631134033,1.0,2.0
+oracle_gap,funnel,0,hvp,hvp,False,2,1,0,2,2,0,1.0,1.595095157623291,1.7026855945587158,2.0,2.0
+oracle_gap,funnel,0,hvp,hvp,False,2,1,1,2,2,0,1.0,1.7430696487426758,1.7504608631134033,1.0,2.0
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,0,2,2,0,1.0,1.6465044021606445,1.7026855945587158,2.0,2.0
+oracle_gap,funnel,0,hybrid,hybrid,False,2,0,1,2,2,0,1.0,1.7430696487426758,1.7504608631134033,1.0,2.0
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,0,2,2,0,1.0,1.595095157623291,1.7026855945587158,2.0,2.0
+oracle_gap,funnel,0,hybrid,hybrid,False,2,1,1,2,2,0,1.0,1.7430696487426758,1.7504608631134033,1.0,2.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,0,2,2,0,1.0,1.0,1.0,2.0,2.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,0,1,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,0,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,oracle_previous,oracle_previous,False,2,1,1,2,2,0,1.0,1.0,2.0,2.0,2.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,0,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,0,1,2,2,0,1.0,1.0,2.0,2.0,2.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,0,2,2,0,1.0,1.0,1.0,1.0,2.0
+oracle_gap,funnel,0,oracle_current,oracle_current (analysis-only upper bound),True,2,1,1,2,2,0,1.0,2.0,2.0,2.0,2.0

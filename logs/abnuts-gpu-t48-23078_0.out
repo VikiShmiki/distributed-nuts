@@ -1,0 +1,64 @@
+SLURM job id: 23078
+SLURM array task id: 0
+Host: gpgpu01.hpc.local
+Project root: /home/hpc/users/viktor.najdovski/distributed-nuts
+Run root: /home/hpc/users/viktor.najdovski/abnuts_runs/23078
+Image: /home/hpc/users/viktor.najdovski/distributed-nuts/images/abnuts.sif
+Task: oracle_gap_funnel
+Config: /home/hpc/users/viktor.najdovski/distributed-nuts/configs/oracle_gap.yaml
+Profile: gpu_bucket_sweep
+Backend: gpu
+Output directory: /home/hpc/users/viktor.najdovski/abnuts_runs/23078/raw/oracle_gap/gpu_bucket_sweep_oracle_gap_funnel
+Log files: /home/hpc/users/viktor.najdovski/distributed-nuts/logs/abnuts-oracle-gap-23078_0.out and /home/hpc/users/viktor.najdovski/distributed-nuts/logs/abnuts-oracle-gap-23078_0.err
+SLURM time limit: 3:00:00; remaining at launch: 3:00:00
+Walltime guard cushion: 600s
+Walltime guard mode: auto from SLURM remaining time
+Sun Aug  9 17:46:29 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.05              Driver Version: 560.35.05      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:01:00.0 Off |                   On |
+| N/A   51C    P0            109W /  500W |   12054MiB /  81920MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          Off |   00000000:41:00.0 Off |                    0 |
+| N/A   79C    P0            503W /  500W |   64948MiB /  81920MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          Off |   00000000:81:00.0 Off |                    0 |
+| N/A   84C    P0            355W /  500W |   64948MiB /  81920MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          Off |   00000000:C1:00.0 Off |                    0 |
+| N/A   61C    P0            268W /  500W |   64948MiB /  81920MiB |     87%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    0   0   0  |           12054MiB / 81156MiB    | 98      0 |  7   0    5    1    1 |
+|                  |                 5MiB / 131072MiB |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0    0    0     130346      C   /opt/venv/bin/python                        12050MiB |
+|    1   N/A  N/A    127654      C   ...ts/llm_emotion_sae/.venv/bin/python      64938MiB |
+|    2   N/A  N/A    127798      C   ...ts/llm_emotion_sae/.venv/bin/python      64938MiB |
+|    3   N/A  N/A    127937      C   ...ts/llm_emotion_sae/.venv/bin/python      64938MiB |
++-----------------------------------------------------------------------------------------+
+Running with local walltime guard: timeout=10198s kill_after=120s
+abnuts source verified: /workspace/src/abnuts/__init__.py
+Wrote oracle-gap summary: /runs/raw/oracle_gap/gpu_bucket_sweep_oracle_gap_funnel/summary.csv

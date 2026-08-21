@@ -1,0 +1,35 @@
+{
+  "benchmark": "eight_schools",
+  "command": "python -m abnuts.experiments.run_benchmark",
+  "config_hash": "4bc87c77d2a319084ac82caae27545f56d3f8e9caac4cf18f0aa681be499a650",
+  "config_path": "configs/eight_schools.yaml",
+  "config_sha256": "e3b07b58b4bde1ad15947f70fddcf29904eb8181bc7fe6184ec118556580af2d",
+  "created_at_utc": "2026-08-21T00:24:56.330006+00:00",
+  "model_metadata": {
+    "description": "Eight Schools hierarchical normal benchmark with an unconstrained centered parameterization.",
+    "dimension": 10,
+    "event_shape": [
+      10
+    ],
+    "model_family": "eight_schools",
+    "name": "eight_schools_centered",
+    "num_schools": 8,
+    "parameterization": "centered"
+  },
+  "output_dir": "results/raw/t51_preferred/final_suite/eight_schools_centered",
+  "outputs": {
+    "summary_csv": "summary.csv",
+    "timing_repetitions_csv": "timing_repetitions.csv"
+  },
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "profile": "t51_preferred_centered",
+  "profiler_markers_enabled": false,
+  "python_version": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+  "row_count": 35,
+  "schema_version": 1,
+  "status": "ok",
+  "timing_breakdown_enabled": false,
+  "warm_repeats": 30,
+  "warm_timing_dispersion": "IQR with every repeat retained",
+  "warm_timing_summary": "median of warm_repeats blocked repeats"
+}

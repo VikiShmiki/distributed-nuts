@@ -1,0 +1,6 @@
+backend: cpu
+seed: 0
+num_chains: 8
+dimension: 4
+num_warmup: 2
+num_draws: 4

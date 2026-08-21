@@ -1,0 +1,76 @@
+{
+  "backend": "cpu",
+  "bucket_size": 4,
+  "bucketed_final_state": {
+    "position_shape": [
+      8,
+      4
+    ],
+    "potential_energy_grad_shape": [
+      8,
+      4
+    ],
+    "potential_energy_shape": [
+      8
+    ]
+  },
+  "bucketed_planner": {
+    "final_padding_ratio": 0.0,
+    "num_recorded_plans": 1
+  },
+  "command": "python -m abnuts.experiments.run_correctness",
+  "config_hash": "a10030aa7a31e9a5f8f0467b3fdc65e94c23373c26f4ad2901dcff06a56b0092",
+  "created_at_utc": "2026-05-25T16:36:08.707265+00:00",
+  "dimension": 4,
+  "dtype": "float32",
+  "equivalence": {
+    "final_rng_keys_equal": true,
+    "max_position_delta": 0.0,
+    "metrics_equal": {
+      "acceptance_statistic": true,
+      "divergence_flag": true,
+      "energy_error": true,
+      "gradient_norm": true,
+      "leapfrog_count": true,
+      "max_tree_depth_hit": true,
+      "realized_tree_depth": true
+    },
+    "positions_equal": true
+  },
+  "max_tree_depth": 3,
+  "method": "both",
+  "model": "funnel",
+  "monolithic_final_state": {
+    "position_shape": [
+      8,
+      4
+    ],
+    "potential_energy_grad_shape": [
+      8,
+      4
+    ],
+    "potential_energy_shape": [
+      8
+    ]
+  },
+  "num_chains": 8,
+  "num_steps": 1,
+  "output_dir": "results/raw/correctness/bucket_tiny",
+  "outputs": {
+    "bucketed_bucket_plan_csv": "bucketed_bucket_plan.csv",
+    "bucketed_events_jsonl": "bucketed_events.jsonl",
+    "bucketed_final_positions_csv": "bucketed_final_positions.csv",
+    "bucketed_per_iteration_csv": "bucketed_per_iteration.csv",
+    "bucketed_positions_csv": "bucketed_positions.csv",
+    "equivalence_json": "equivalence.json",
+    "monolithic_events_jsonl": "monolithic_events.jsonl",
+    "monolithic_final_positions_csv": "monolithic_final_positions.csv",
+    "monolithic_per_iteration_csv": "monolithic_per_iteration.csv",
+    "monolithic_positions_csv": "monolithic_positions.csv"
+  },
+  "predictor": "history",
+  "schema_version": 1,
+  "seed": 0,
+  "status": "ok",
+  "step_size": 0.05
+}

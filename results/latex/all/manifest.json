@@ -1,0 +1,167 @@
+{
+  "allow_missing": true,
+  "command": "python -m abnuts.analysis.report",
+  "created_at_utc": "2026-05-26T10:18:13.611489+00:00",
+  "generated_studies": [
+    {
+      "key": "funnel_ablation",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "tables/table_bucket_ablation.tex",
+        "figures/fig_speedup_vs_bucket_size.tex"
+      ],
+      "source": "results/raw/funnel_ablation/tiny/summary.csv",
+      "title": "Funnel bucket ablation"
+    },
+    {
+      "key": "chain_scaling",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "tables/table_chain_scaling.tex",
+        "figures/fig_chain_scaling.tex"
+      ],
+      "source": "results/raw/chain_scaling/tiny/summary.csv",
+      "title": "Chain scaling"
+    },
+    {
+      "key": "dimension_scaling",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "tables/table_dimension_scaling.tex",
+        "figures/fig_dimension_scaling.tex"
+      ],
+      "source": "results/raw/dimension_scaling/tiny/summary.csv",
+      "title": "Dimension scaling"
+    },
+    {
+      "key": "oracle_gap",
+      "note": "Smoke-only tiny result; not paper-scale evidence. Oracle-current rows are analysis-only upper bounds.",
+      "outputs": [
+        "tables/table_oracle_gap.tex",
+        "figures/fig_oracle_gap_waterfall.tex",
+        "figures/fig_predictor_calibration.tex",
+        "figures/fig_padding_heatmap.tex",
+        "figures/fig_speedup_vs_heterogeneity.tex"
+      ],
+      "source": "results/raw/oracle_gap/tiny/summary.csv",
+      "title": "Oracle-gap decomposition"
+    },
+    {
+      "key": "diagnostics",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "tables/table_diagnostics.tex"
+      ],
+      "source": "results/raw/long_trace/tiny/diagnostics.csv",
+      "title": "Long-trace diagnostics"
+    },
+    {
+      "key": "sbc",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "figures/fig_sbc_rank_histogram.tex"
+      ],
+      "source": "results/raw/sbc/tiny/rank_histogram.csv",
+      "title": "Simulation-based calibration"
+    },
+    {
+      "key": "profiling",
+      "note": "Smoke-only tiny result; not paper-scale evidence.",
+      "outputs": [
+        "tables/table_runtime_breakdown.tex",
+        "figures/fig_runtime_breakdown.tex"
+      ],
+      "source": "results/raw/profiling/tiny/summary.csv",
+      "title": "Runtime breakdown"
+    },
+    {
+      "key": "sensitivity",
+      "note": "Smoke-only evidence: existing rows are too small for paper-scale claims (seeds=1, max steps=2, max chains=8).",
+      "outputs": [
+        "tables/table_sensitivity_worst_groups.tex",
+        "tables/table_sensitivity_coverage.tex",
+        "sensitivity_summary.tex"
+      ],
+      "source": "results/raw",
+      "title": "Sensitivity and worst-group reporting"
+    }
+  ],
+  "input_root": "results/raw",
+  "latex_files": [
+    "figures/fig_chain_scaling.tex",
+    "figures/fig_dimension_scaling.tex",
+    "figures/fig_oracle_gap_waterfall.tex",
+    "figures/fig_padding_heatmap.tex",
+    "figures/fig_predictor_calibration.tex",
+    "figures/fig_runtime_breakdown.tex",
+    "figures/fig_sbc_rank_histogram.tex",
+    "figures/fig_speedup_vs_bucket_size.tex",
+    "figures/fig_speedup_vs_heterogeneity.tex",
+    "macros/result_macros.tex",
+    "results_summary.tex",
+    "sensitivity_summary.tex",
+    "tables/table_bucket_ablation.tex",
+    "tables/table_chain_scaling.tex",
+    "tables/table_diagnostics.tex",
+    "tables/table_dimension_scaling.tex",
+    "tables/table_oracle_gap.tex",
+    "tables/table_runtime_breakdown.tex",
+    "tables/table_sensitivity_coverage.tex",
+    "tables/table_sensitivity_worst_groups.tex"
+  ],
+  "missing_results": [
+    {
+      "expected": "results/raw/funnel_ablation/<paper-run>/summary.csv",
+      "key": "funnel_ablation_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Funnel bucket ablation paper-scale run"
+    },
+    {
+      "expected": "results/raw/chain_scaling/<paper-run>/summary.csv",
+      "key": "chain_scaling_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Chain scaling paper-scale run"
+    },
+    {
+      "expected": "results/raw/dimension_scaling/<paper-run>/summary.csv",
+      "key": "dimension_scaling_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Dimension scaling paper-scale run"
+    },
+    {
+      "expected": "results/raw/oracle_gap/<paper-run>/summary.csv",
+      "key": "oracle_gap_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Oracle-gap decomposition paper-scale run"
+    },
+    {
+      "expected": "results/raw/long_trace/<paper-run>/diagnostics.csv",
+      "key": "diagnostics_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Long-trace diagnostics paper-scale run"
+    },
+    {
+      "expected": "results/raw/sbc/<paper-run>/rank_histogram.csv",
+      "key": "sbc_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Simulation-based calibration paper-scale run"
+    },
+    {
+      "expected": "results/raw/profiling/<paper-run>/summary.csv",
+      "key": "profiling_paper_scale",
+      "note": "TODO_RESULT: only tiny/smoke evidence is available in this aggregate bundle.",
+      "title": "Runtime breakdown paper-scale run"
+    }
+  ],
+  "output_root": "results/latex/all",
+  "processed_files": [
+    "results/processed/all/all_summary.csv",
+    "results/processed/all/all_diagnostics.csv",
+    "results/processed/all/all_rank_histogram.csv",
+    "results/processed/all/equivalence_checks.csv",
+    "results/processed/all/missing_results.csv"
+  ],
+  "processed_root": "results/processed/all",
+  "schema_version": 1,
+  "warnings": []
+}

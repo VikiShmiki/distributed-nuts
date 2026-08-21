@@ -1,0 +1,3 @@
+model,seed,predictor,bucket_size,num_chains,dimension,num_steps,step_size,max_tree_depth,predictor_beta,t_mono,t_bucket,speedup,mono_total_leapfrog_count,mono_divergence_count,mono_max_realized_tree_depth,bucket_total_leapfrog_count,bucket_divergence_count,bucket_max_realized_tree_depth,bucket_num_buckets,bucket_padding_count,bucket_padding_ratio
+funnel,0,history,4,4,4,1,0.03,2,0.9,3.9851574301719666,1.306490994989872,3.050275467228046,6,0,2,6,0,2,1,0,0.0
+funnel,0,history,4,8,4,1,0.03,2,0.9,3.8274894431233406,1.0918299928307533,3.505572724925727,14,0,2,14,0,2,2,0,0.0

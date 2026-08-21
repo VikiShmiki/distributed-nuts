@@ -1,0 +1,43 @@
+benchmark: sbc
+model: normal_location
+backend: cpu
+dtype: float32
+methods: [monolithic, bucketed]
+prior_scale: 1.0
+observation_scale: 1.0
+num_observations: 4
+step_size: 0.04
+max_tree_depth: 2
+predictor: history
+predictor_beta: 0.9
+bucket_size: 2
+initial_jitter_scale: 0.05
+
+profiles:
+  tiny:
+    seed: 0
+    num_replicates: 2
+    num_chains: 2
+    num_warmup: 1
+    num_draws: 2
+    smoke_only: true
+
+  medium:
+    seed: 0
+    num_replicates: 25
+    num_chains: 4
+    num_warmup: 64
+    num_draws: 64
+    max_tree_depth: 3
+    bucket_size: 4
+    smoke_only: false
+
+  paper:
+    seed: 0
+    num_replicates: 100
+    num_chains: 4
+    num_warmup: 1000
+    num_draws: 1000
+    max_tree_depth: 5
+    bucket_size: 4
+    smoke_only: false
