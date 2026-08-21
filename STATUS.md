@@ -2,20 +2,55 @@
 
 ## Current active task
 
-**Active task: T53 — Publish a private GitHub repository**
+**No active task — T53 is complete.**
 
-Initialize this folder as a Git repository, exclude local caches, credentials,
-and the 3 GB Singularity image, create a private `VikiShmiki/distributed-nuts`
-repository through the authenticated GitHub CLI, push the complete source,
-canonical results, paper, and presentation, verify remote privacy and branch
-state, record the result here, and stop.
+### T53 complete: private GitHub repository publication
 
-Smallest validation:
+Initialized this folder as a Git repository on branch `main`, committed 558
+source/artifact files, created the private GitHub repository, and pushed it to:
+
+- `https://github.com/VikiShmiki/distributed-nuts`
+- remote: `https://github.com/VikiShmiki/distributed-nuts.git`
+- visibility: `PRIVATE`
+- default branch: `main`
+
+Added `.gitignore` and `images/.gitkeep`. The 3 GB
+`images/abnuts.sif` build product, `.claude` local permissions, Python caches,
+editor state, virtual environments, and local LaTeX build products are not
+tracked. Source, canonical raw/processed/LaTeX evidence, logs, `paper.tex`, and
+`presentation/index.html` are tracked. No GitHub credential was written into
+the repository.
+
+Files changed:
+
+- `.gitignore`
+- `images/.gitkeep`
+- `STATUS.md`
+- `.git/` metadata and `origin` remote (local repository metadata)
+
+Commands and validation:
 
 ```bash
-git status --short
-gh repo view VikiShmiki/distributed-nuts --json visibility,url,defaultBranchRef
+git init -b main
+git config user.name 'Viktor Najdovski'
+git config user.email '142947817+VikiShmiki@users.noreply.github.com'
+git add .
+git commit -m 'Initial research implementation and presentation'
+gh repo create VikiShmiki/distributed-nuts --private --source=. \
+  --remote=origin --push \
+  --description 'Work-aware bucketed NUTS in JAX: correctness-preserving scheduling, CPU scaling evidence, paper, and visual presentation'
+# PASS: repository created and main pushed
+
+gh repo view VikiShmiki/distributed-nuts \
+  --json nameWithOwner,visibility,url,defaultBranchRef,isPrivate
+# PASS: isPrivate=true, visibility=PRIVATE, default branch=main
+
+git check-ignore -v images/abnuts.sif .claude/settings.local.json \
+  .pytest_cache/CACHEDIR.TAG
+# PASS: all local/build paths ignored
 ```
+
+Next active task: none.
 
 ### T52 complete: high-level visual course presentation
 
